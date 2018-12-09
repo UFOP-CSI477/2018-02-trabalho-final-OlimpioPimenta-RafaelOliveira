@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Statusos;
 use Illuminate\Support\Facades\DB;
-class StatusosTableSeeder extends Seeder
+class StatusossTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
