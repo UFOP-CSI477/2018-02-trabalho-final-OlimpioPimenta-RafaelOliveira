@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Especialidade;
 
 class EspecialidadesTableSeeder extends Seeder
 {
@@ -13,15 +14,15 @@ class EspecialidadesTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('especialidades')->delte();
+        DB::table('especialidades')->delete();
 
-        Funcionario::create(array('nome'=>'Alinhamento'));
-        Funcionario::create(array('nome'=>'Chefe.de.oficina'));
-        Funcionario::create(array('nome'=>'Lavação'));
-        Funcionario::create(array('nome'=>'Mecânica'));
-        Funcionario::create(array('nome'=>'Pintura'));
-        Funcionario::create(array('nome'=>'Polimento'));
-        Funcionario::create(array('nome'=>'Tec.diag'));
+        Especialidade::create(array('nome'=>'Alinhamento'));
+        Especialidade::create(array('nome'=>'Chefe.de.oficina'));
+        Especialidade::create(array('nome'=>'Lavação'));
+        Especialidade::create(array('nome'=>'Mecânica'));
+        Especialidade::create(array('nome'=>'Pintura'));
+        Especialidade::create(array('nome'=>'Polimento'));
+        Especialidade::create(array('nome'=>'Tec.diag'));
         
     }
 }

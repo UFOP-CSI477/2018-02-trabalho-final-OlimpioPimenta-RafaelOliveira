@@ -13,7 +13,7 @@ class CreateStatusagendamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('_statusagendamentos', function (Blueprint $table) {
+        Schema::create('statusagendamentos', function (Blueprint $table) {
             $table->increments('id');
             $table->String('codigo',20);
             $table->String('descricao',40);
@@ -28,6 +28,6 @@ class CreateStatusagendamentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_statusagendamentos');
+        Schema::dropIfExists('statusagendamentos');
     }
 }
