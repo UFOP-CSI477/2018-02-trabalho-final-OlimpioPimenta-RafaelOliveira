@@ -337,6 +337,14 @@
            <li><a class="white-text" href="#!">Agenda</a></li>
          </ul>
        </div>
+       <div class="col l3 s6">
+         <h5 class="white-text">Contatos</h5>
+         <ul>
+           <li><a class="white-text" href="#!">Entre em contato</a></li>
+           <li><a class="white-text" href="#!">Trabalhe Conosco</a></li>
+           <li><a class="white-text" href="#!">FAQ</a></li>
+        </ul>
+       </div>
      </div>
    </div>
    <div class="footer-copyright">
