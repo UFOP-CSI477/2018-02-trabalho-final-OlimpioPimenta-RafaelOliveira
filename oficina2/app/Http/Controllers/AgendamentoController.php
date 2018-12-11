@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Agendamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AgendamentoController extends Controller
 {
@@ -11,9 +13,16 @@ class AgendamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     // public function __construct() {
+     //
+     //     $this->middleware('auth');
+     // }
+
+
     public function index()
     {
-        //
+        return view('agendamento.index');
     }
 
     /**

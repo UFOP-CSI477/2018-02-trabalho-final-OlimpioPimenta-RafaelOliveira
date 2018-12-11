@@ -13,7 +13,7 @@ class OrdensServicoController extends Controller
      */
     public function index()
     {
-        //
+        return view('ordensdeservico.index');
     }
 
     /**

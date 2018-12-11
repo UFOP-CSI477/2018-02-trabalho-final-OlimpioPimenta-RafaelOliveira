@@ -13,7 +13,7 @@ class StatusOSController extends Controller
      */
     public function index()
     {
-        //
+        return view('statusos.index');
     }
 
     /**

@@ -13,7 +13,7 @@ class EspecialidadeController extends Controller
      */
     public function index()
     {
-        //
+        return view('especialidades.index');
     }
 
     /**

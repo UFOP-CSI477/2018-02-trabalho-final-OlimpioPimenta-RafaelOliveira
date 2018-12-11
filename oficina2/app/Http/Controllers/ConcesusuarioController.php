@@ -13,7 +13,7 @@ class ConcesusuarioController extends Controller
      */
     public function index()
     {
-        //
+        return view('concesusuario.index');
     }
 
     /**

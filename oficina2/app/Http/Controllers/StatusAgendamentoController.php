@@ -13,7 +13,7 @@ class StatusAgendamentoController extends Controller
      */
     public function index()
     {
-        //
+        return view('statusagenda.index');
     }
 
     /**
@@ -34,7 +34,7 @@ class StatusAgendamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
     }
 
     /**

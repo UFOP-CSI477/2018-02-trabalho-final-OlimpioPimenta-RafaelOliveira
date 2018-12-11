@@ -13,7 +13,7 @@ class ConcessionariaController extends Controller
      */
     public function index()
     {
-        //
+      return view('concessionarias.index');
     }
 
     /**
