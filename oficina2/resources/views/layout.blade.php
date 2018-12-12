@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
- <html>
+<html>
    <head>
+   <meta charset="UTF-8">
      <!--Import Google material-icons -->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -15,6 +14,9 @@
      <link type="text/css" rel="stylesheet" href="css/form.css">
      <!--Let browser know website is optimized for mobile-->
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+     <!-- pagina na tabela -->
+     <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
 
      <title>@yield('title', 'Parallax')</title>
    </head>
@@ -83,8 +85,26 @@
      </div>
    </div>
  </footer>
-     <!--Import jQuery before materialize.js-->
-     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+  <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <!-- codigo para paginação das tablelas -->
+  <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+  <script>
+  $(document).ready(function(){
+      $('#minhaTabela').DataTable({
+          "language": {
+                "lengthMenu": "Mostrando _MENU_ registros por página",
+                "zeroRecords": "Nada encontrado",
+                "info": "Mostrando página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "infoFiltered": "(filtrado de _MAX_ registros no total)"
+            }
+        });
+  });
+  </script>
+
    </body>
  </html>
