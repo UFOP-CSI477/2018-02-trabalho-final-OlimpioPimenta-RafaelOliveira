@@ -53,14 +53,14 @@
           @if (($w->administrador) == 1)
             <td data-label="Administrador">
                 <label>
-                  <input type="checkbox" class="filled-in" checked="checked"/>
+                  <input type="checkbox" class="filled-in" checked="checked" disabled="disabled"/>
                   <span></span>
                 </label>
             </td>
           @else
             <td data-label="Administrador">
                 <label>
-                  <input type="checkbox" class="filled-in"/>
+                  <input type="checkbox" class="filled-in" disabled="disabled"/>
                   <span></span>
                 </label>
             </td>
