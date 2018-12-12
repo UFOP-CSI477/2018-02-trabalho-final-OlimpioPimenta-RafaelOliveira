@@ -12,11 +12,11 @@
     -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   }
-  
+
   textarea {
     max-width: 100%;
   }
-  
+
   label {
     margin-bottom: 0;
     font-weight: 400;
@@ -27,7 +27,7 @@
     line-height: 10px;
     margin-bottom: 8px;
   }
-  
+
   .form-control {
     text-align: center;
     font-size: 16px;
@@ -38,7 +38,7 @@
   .form-control, .form-control:focus {
     box-shadow: none;
   }
-  
+
   .form-group {
     position: relative;
   }
@@ -123,7 +123,7 @@
   .form-group.-overlayed.-focus .form-control {
     z-index: 1051;
   }
-  
+
   .form-caption {
     position: absolute;
     opacity: 0;
@@ -220,13 +220,13 @@
       background-position: center top;
     }
   }
-  
+
   .form-group.-focus .form-caption {
     opacity: 1;
     visibility: visible;
     z-index: 1050;
   }
-  
+
   .panel-footer pre {
     padding: 0;
     border-width: 0;
@@ -235,7 +235,7 @@
   .panel-footer pre + pre {
     margin-top: 10px;
   }
-  
+
   .showcase {
     margin-bottom: 5px;
   }
@@ -245,4 +245,7 @@
   .showcase .form-group + .form-group {
     margin-top: 5px;
   }
-  
+
+  .navbar-layout{
+    margin-bottom: 25px;
+  }

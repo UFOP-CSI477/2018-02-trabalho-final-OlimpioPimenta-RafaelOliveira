@@ -17,7 +17,7 @@ Route::get('/', function () {
 Route::resource('/usuario', 'UsuarioController');
 */
 
-Route::get('/', 'WelcomeController@index','UsuarioController');
+Route::get('/', 'WelcomeController@index');
 Route::resource('/agendamento', 'AgendamentoController');
 Route::resource('/programacao', 'ProgramacaoController');
 Route::resource('/apontamento', 'ApontamentoController');

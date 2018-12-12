@@ -12,11 +12,11 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!--Import materialize.css-->
      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
+     <link type="text/css" rel="stylesheet" href="css/form.css">
      <!--Let browser know website is optimized for mobile-->
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-     <title>Menu - Pincipal</title>
+     <title>@yield('title', 'Parallax')</title>
    </head>
 
    <body>
@@ -24,9 +24,9 @@
        <p><strong>{{ Session::get('mensagem') }}</strong></p>
      @endif
 
-    <nav>
-      <div class="nav-wrapper">
-        <a href="welcome.index" class="brand-logo" style="border-left=10px"><img src="img/brand.png" class="responsive-img" width="130px" height="100px"></a>
+    <nav class="navbar-layout">
+      <div class="nav-wrapper" >
+        <a href="/" class="brand-logo" style="padding:10px"><img src="img/brand.png" class="responsive-img" width="160px" height="130px"></a>
         <ul class="right hide-on-med-and-down">
           <li><a href=""><i class="material-icons left">search</i>Pesquisa</a></li>
           <li><a href="/home"><i class="material-icons right">account_circle</i>Login</a></li>
