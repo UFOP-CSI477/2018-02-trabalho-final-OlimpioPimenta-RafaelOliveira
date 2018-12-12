@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Concessionaria;
 
 class ConcessionariaController extends Controller
 {
@@ -13,7 +14,8 @@ class ConcessionariaController extends Controller
      */
     public function index()
     {
-      return view('concessionarias.index');
+      $concessionaria = Concessionaria::orderBy('nome_fantasia')->get();
+      return view('concessionarias.index')->with('concessionarias', $concessionaria);
     }
 
     /**

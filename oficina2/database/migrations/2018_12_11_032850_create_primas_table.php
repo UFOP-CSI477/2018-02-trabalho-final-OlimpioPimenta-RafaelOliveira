@@ -15,6 +15,7 @@ class CreatePrimasTable extends Migration
     {
         Schema::create('primas', function (Blueprint $table) {
             $table->increments('id');
+            $table->String('prisma',40);
             $table->timestamps();
         });
     }

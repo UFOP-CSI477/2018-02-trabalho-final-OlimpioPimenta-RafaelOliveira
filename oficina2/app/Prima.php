@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Prima extends Model
 {
     //
+    protected $fillable=['prisma'];
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Prima;
 
 class PrimaController extends Controller
 {
@@ -13,7 +14,8 @@ class PrimaController extends Controller
      */
     public function index()
     {
-        return view('primas.index');
+        $prisma = Prima::orderBy('prisma')->get();
+        return view('primas.index')->with('prismas', $prisma);
     }
 
     /**
