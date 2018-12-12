@@ -2,21 +2,29 @@
    <head>
    <meta charset="UTF-8">
      <!--Import Google material-icons -->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <link href="{{URL::asset('https://fonts.googleapis.com/icon?family=Material+Icons')}}" rel="stylesheet">
 
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
      <!--Import Google Icon Font-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+     <link href="{{URL::asset('https://fonts.googleapis.com/icon?family=Material+Icons')}}" rel="stylesheet">
      <!--Import materialize.css-->
-     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-     <link type="text/css" rel="stylesheet" href="css/form.css">
+     <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+
+     <link type="text/css" rel="stylesheet" href="{{URL::asset('css/materialize.min.css ')}}"  media="screen,projection"/>
+
+    <link type="text/css" rel="stylesheet" href="{{URL::asset('css/form.css ')}}">
+     <!-- <link type="text/css" rel="stylesheet" href="css/form.css"> -->
+
      <!--Let browser know website is optimized for mobile-->
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
      <!-- pagina na tabela -->
-     <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+     
+     <link href="{{URL::asset('//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css')}}" rel="stylesheet">
 
      <title>@yield('title', 'Parallax')</title>
    </head>
@@ -28,7 +36,7 @@
 
     <nav class="navbar-layout">
       <div class="nav-wrapper" >
-        <a href="/" class="brand-logo" style="padding:10px"><img src="img/brand.png" class="responsive-img" width="160px" height="130px"></a>
+        <a href="/" class="brand-logo" style="padding:10px"><img src="{{URL::asset('img/brand.png')}}" class="responsive-img" width="160px" height="130px"></a>
         <ul class="right hide-on-med-and-down">
           <li><a href=""><i class="material-icons left">search</i>Pesquisa</a></li>
           <li><a href="/home"><i class="material-icons right">account_circle</i>Login</a></li>
@@ -87,11 +95,12 @@
  </footer>
   
   <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="{{URL::asset('https://code.jquery.com/jquery-3.2.1.min.js')}}"></script>
+    
+     <script type="text/javascript" src="{{URL::asset('js/materialize.min.js')}}"></script>
 
     <!-- codigo para paginação das tablelas -->
-  <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+  <script src="{{URL::asset('//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js')}}"></script>
   <script>
   $(document).ready(function(){
       $('#minhaTabela').DataTable({

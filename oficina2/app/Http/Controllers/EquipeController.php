@@ -55,10 +55,13 @@ class EquipeController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * $id
      */
-    public function edit($id)
+
+    public function edit(Equipe $equipe)
     {
         //
+        return view('equipe.edit')->with('editar',$equipe);
     }
 
     /**
