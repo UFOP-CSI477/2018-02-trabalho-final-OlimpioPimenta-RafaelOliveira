@@ -37,14 +37,35 @@
 
     @foreach($usuarios as $w)
        <tr>
-          <th scope="col"><a href="" target="_parent"><i class="material-icons">edit</i></a></th>
-          <th scope="col"><a href="" target="_blank"><i class="material-icons">remove_circle</i></a></th>
-          <td data-label="Id">{{ $w->id }}</td>
+          @if (($w->administrador) == 1)
+            <th scope="col"><a href="{{ route('usuario.edit', $w->id) }}"><i class="material-icons">edit</i></a></th>
+            <th scope="col"><a href="{{ route('usuario.destroy', $w->id) }}" onsubmit="return confirm('Confirma exclusão do Usuário: {{ $w->nome }} ?');"><i class="material-icons">remove_circle</i></a></th>
+          @else
+            <th scope="col"><a href="#"><i class="material-icons">edit</i></a></th>
+            <th scope="col"><a href=""><i class="material-icons">remove_circle</i></a></th>
+          @endif
+          
+          <td data-label="ID">{{ $w->id }}</td>
           <td data-label="Usuário">{{ $w->usuario }}</td>
           <td data-label="Chapa">{{ $w->chapa }}</td>
           <td data-label="Senha">*****</td>
           <td data-label="Confirma">*****</td>
-          <td data-label="Ativo">{{ $w->ativo }}</td>
+
+           @if (($w->ativo) == 1)
+            <td data-label="Ativo">
+                <label>
+                  <input type="checkbox" class="filled-in" checked="checked" disabled="disabled"/>
+                  <span></span>
+                </label>
+            </td>
+          @else
+            <td data-label="Ativo">
+                <label>
+                  <input type="checkbox" class="filled-in" disabled="disabled"/>
+                  <span></span>
+                </label>
+            </td>
+          @endif
 
           @if (($w->administrador) == 1)
             <td data-label="Administrador">
