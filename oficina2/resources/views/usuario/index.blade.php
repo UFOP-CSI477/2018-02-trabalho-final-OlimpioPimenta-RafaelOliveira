@@ -49,7 +49,13 @@
           <td data-label="Senha">{{ $w->senha }}</td>
           <td data-label="Confirma">{{ $w->confirma }}</td>
           <td data-label="Ativo">{{ $w->ativo }}</td>
-          <td data-label="Administrador">{{ $w->administrador}}</td>
+
+          @if (($w->administrador) == 0)
+          <td data-label="Administrador">
+            <label>
+              <input type="checkbox" class="filled-in" checked=""/>
+            </label>
+          </td>
        </tr>
      @endforeach
    </tbody>
