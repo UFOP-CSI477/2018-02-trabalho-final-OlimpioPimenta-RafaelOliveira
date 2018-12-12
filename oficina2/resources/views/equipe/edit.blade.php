@@ -25,7 +25,7 @@
 <br/>
 <div class="modal-content">
       <div class="row">
-         <form class="col s12" method="POST" action="{{route('equipe.store')}}">
+         <form class="col s12" method="POST" action="{{route('equipe.update',$editar->id)}}">
           @csrf
           @method('PATCH')
               <h2>{{$editar->id}}</h2>
