@@ -46,16 +46,26 @@
           <td data-label="Id">{{ $w->id }}</td>
           <td data-label="Usuário">{{ $w->usuario }}</td>
           <td data-label="Chapa">{{ $w->chapa }}</td>
-          <td data-label="Senha">{{ $w->senha }}</td>
-          <td data-label="Confirma">{{ $w->confirma }}</td>
+          <td data-label="Senha">*****</td>
+          <td data-label="Confirma">*****</td>
           <td data-label="Ativo">{{ $w->ativo }}</td>
 
-          @if (($w->administrador) == 0)
-          <td data-label="Administrador">
-            <label>
-              <input type="checkbox" class="filled-in" checked=""/>
-            </label>
-          </td>
+          @if (($w->administrador) == 1)
+            <td data-label="Administrador">
+                <label>
+                  <input type="checkbox" class="filled-in" checked="checked"/>
+                  <span></span>
+                </label>
+            </td>
+          @else
+            <td data-label="Administrador">
+                <label>
+                  <input type="checkbox" class="filled-in"/>
+                  <span></span>
+                </label>
+            </td>
+          @endif    
+          
        </tr>
      @endforeach
    </tbody>
