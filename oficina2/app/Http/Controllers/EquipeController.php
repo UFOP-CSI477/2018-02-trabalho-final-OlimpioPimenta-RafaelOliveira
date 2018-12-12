@@ -60,7 +60,7 @@ class EquipeController extends Controller
 
     public function edit(Equipe $equipe)
     {
-        //
+        //  
         return view('equipe.edit')->with('editar',$equipe);
     }
 
@@ -71,12 +71,15 @@ class EquipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Equipe $objeto)
     {
         //
+        $objeto->fill($request->all());
+        $objeto->save();
+        return redirect()->route('equipe.index');
     }
 
-    /**
+    /** 
      * Remove the specified resource from storage.
      *
      * @param  int  $id
