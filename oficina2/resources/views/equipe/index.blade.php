@@ -47,7 +47,7 @@
 
     @foreach($equipes as $w)
        <tr>
-          <th scope="col"><a href="" target="_parent"><i class="material-icons">edit</i></a></th>
+          <th scope="col"><a href="{{route('equipe.edit',$w->id)}}" target=""><i class="material-icons">edit</i></a></th>
           <th scope="col"><a href="" target="_blank"><i class="material-icons">remove_circle</i></a></th>
           <td data-label="Código">{{ $w->cod_equipe }}</td>
           <td data-label="Descrição">{{ $w->descricao }}</td>
