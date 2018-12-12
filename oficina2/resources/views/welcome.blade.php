@@ -219,7 +219,7 @@
              <a href="/tipos"><img src="img/tipos_agenda.png" class="responsive-img small"></a>
        </div>
          <div class="card-action">
-           <h6 class="truncate">Tipos</h6>
+           <h6 class="truncate">Tipos Agenda</h6>
          </div>
        </div>
      </div>

@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Tipo;
 
 class TipoController extends Controller
 {
@@ -13,7 +13,8 @@ class TipoController extends Controller
      */
     public function index()
     {
-        return view('tipos.index');
+        $tipo = Tipo::orderBy('descricao')->get();
+        return view('tipos.index')->with('tipos', $tipo);
     }
 
     /**
