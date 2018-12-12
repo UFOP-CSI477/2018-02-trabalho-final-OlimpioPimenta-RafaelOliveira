@@ -1,5 +1,4 @@
-<!-- <h3>Modelo</h3>
-<img src="img/log_carga.png" width="100px" height="100px"> -->
+
 @extends('layout')
 
 @section('title', 'Parallax - Modelos')
@@ -19,10 +18,7 @@
   </div>
 </div>
 
-<!--
-<div class="container">
-  <img src="img/usuario.png" width="100px" height="100px"><h3>Usuário</h3>
-</div> -->
+
 
 
 <table class="striped highlight responsive-table">

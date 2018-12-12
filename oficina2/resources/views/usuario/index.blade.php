@@ -17,10 +17,6 @@
   </div>
 </div>
 
-<!--
-<div class="container">
-  <img src="img/usuario.png" width="100px" height="100px"><h3>Usuário</h3>
-</div> -->
 
 
 <table class="striped highlight centered responsive-table">
