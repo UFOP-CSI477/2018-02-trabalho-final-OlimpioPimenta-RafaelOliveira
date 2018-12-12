@@ -19,7 +19,7 @@ class CreateEquipesTable extends Migration
             $table->String('descricao',90);
             $table->String('tipe_letra_prog',20);
             $table->boolean('negrito_letra_prog');
-            $table->String('tam_letra_prog',5);
+            $table->String('tam_letra_prog',20);
             $table->String('altura_linha_prog',20);
             $table->String('caracters_por_divisao',5);
             $table->String('altura_linha_apont',5);
