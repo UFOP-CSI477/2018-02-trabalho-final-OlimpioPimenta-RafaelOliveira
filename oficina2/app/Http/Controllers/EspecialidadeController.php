@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Especialidade;
 
 class EspecialidadeController extends Controller
 {
@@ -13,7 +14,8 @@ class EspecialidadeController extends Controller
      */
     public function index()
     {
-        return view('especialidades.index');
+        $especialidade = Especialidade::orderBy('nome')->get();
+        return view('especialidades.index')->with('especialidades',$especialidade);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Modelo;
 
 class ModeloController extends Controller
 {
@@ -13,7 +14,9 @@ class ModeloController extends Controller
      */
     public function index()
     {
-        return view('modelo.index');
+        $modelo = Modelo::orderBy('nome')->get();
+        return view('modelo.index')->with('modelos',$modelo);
+        
     }
 
     /**
