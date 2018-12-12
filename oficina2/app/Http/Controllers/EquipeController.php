@@ -37,6 +37,8 @@ class EquipeController extends Controller
     public function store(Request $request)
     {
         //
+        Equipe::create($request->all());
+        return redirect()->route('equipe.index');
     }
 
     /**

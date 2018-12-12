@@ -65,7 +65,7 @@
 <!-- Modal Structure -->
 <div id="modal1" class="modal modal-fixed-footer">
    <div class="modal-content">
-    <form method="post">
+    <form method="post" action="{{route('equipe.store')}}">
       <h4>Nova Equipe</h4>
       <div class="row">
          <form class="col s12">
