@@ -14,6 +14,7 @@
     <div class="card-stacked">
       <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">Equipe</span>
+         <button data-target="modal1" class="btn modal-trigger">Incluir</button>
       </div>
     </div>
   </div>
@@ -70,5 +71,113 @@
      @endforeach
    </tbody>
  </table>
+
+ <!-- Modal Structure -->
+ <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Nova Equipe</h4>
+      
+      <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="cod_equipe" type="text" class="validate">
+          <label for="cod_equipe">Código Da Equipe</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="descricao" type="text" class="validate">
+          <label for="descricao">Descrição</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="tipo_letra_prog" type="text" class="validate">
+          <label for="tipo_letra_prog">Tipo Letra Prog.</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="tam_letra_prog" type="text" class="validate">
+          <label for="tam_letra_prog">Tam.Letra Prog.</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="altura_linha_prog" type="text" class="validate">
+          <label for="altura_linha_prog">Altura.Linha Prog.</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="caracteres_por_divisao" type="text" class="validate">
+          <label for="caracteres_por_divisao">Caracteres por Divisão</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="altura_linha_apont" type="text" class="validate">
+          <label for="altura_linha_apont">Altura linha Apont.</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="tipo_letra_produt" type="text" class="validate">
+          <label for="tipo_letra_produt">Tipo letra Produt.</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="negrito_produt" type="text" class="validate">
+          <label for="negrito_produt">Negrito Produt.</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="tam_letra_produt" type="text" class="validate">
+          <label for="tam_letra_produt">Tam. letra Produt.</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="tam_letra_hora" type="text" class="validate">
+          <label for="tam_letra_hora">Tam. letra hora.</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="altura_linha_hora" type="text" class="validate">
+          <label for="altura_linha_hora">Altura linha Hora</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="tempo_de_atualizacao" type="text" class="validate">
+          <label for="tempo_de_atualizacao">Tempo de Atualização</label>
+        </div>
+      </div>      
+
+    </form>
+  </div>
+
+
+
+    </div>
+    <div class="modal-footer">
+      <button class="modal-action modal-close waves-effect waves-green btn-flat ">cancelar</button>
+      <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">cancelar</a> -->
+      <button data-target="modal1" class="modal-action modal-close waves-effect waves-green btn-flat ">Enviar</button>
+      <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">enviar</a> -->
+      
+    </div>
+  </div>
 
  @endsection
