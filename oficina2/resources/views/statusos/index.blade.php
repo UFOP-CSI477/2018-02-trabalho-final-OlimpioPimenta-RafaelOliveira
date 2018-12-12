@@ -39,30 +39,61 @@
           <th scope="col"><a href="" target="_blank"><i class="material-icons">remove_circle</i></a></th>
           <td data-label="Código">{{ $w->id }}</td>
           <td data-label="Descrição">{{ $w->descricao }}</td>
-          <td data-label="Libera Prisma">
-          <form action="#">
-          @if($w->libera_prisma==1)
-          <input type="checkbox" id="test8" disabled="disabled" />
-           @else  <input type="checkbox"  disabled="disabled" /> 
-          @endif 
-          </td>
-          <td data-label="Consulta Web">
-          @if($w->consulta_web==1)
-            <input type="checkbox"  checked="checked" disabled="disabled" />
-          @else  <input type="checkbox"  disabled="disabled" />
-          @endif
-          </td>
           
+          @if($w->libera_prisma==1)
+          <td data-label="Libera Prisma">
+                <label>
+                  <input type="checkbox" class="filled-in" checked="checked" disabled="disabled"/>
+                  <span></span>
+                </label>
+            </td>
+           @else            
+           <td data-label="libera Prisma">
+                <label>
+                  <input type="checkbox" class="filled-in" disabled="disabled"/>
+                  <span></span>
+                </label>
+            </td>
+           
+
+          @endif 
+          
+          
+          @if($w->consulta_web==1)
           <td data-label="Consulta Web">
+                <label>
+                  <input type="checkbox" class="filled-in" checked="checked" disabled="disabled"/>
+                  <span></span>
+                </label>
+            </td>
+           @else            
+           <td data-label="libera Prisma">
+                <label>
+                  <input type="checkbox" class="filled-in" disabled="disabled"/>
+                  <span></span>
+                </label>
+            </td>
+            @endif 
+
           @if($w->envia_sms==1)
-            <input type="checkbox"  checked="checked" disabled="disabled" />
-          @else  <input type="checkbox"  disabled="disabled" />
-          @endif
-          </td>
+          <td data-label="Envia SMS">
+                <label>
+                  <input type="checkbox" class="filled-in" checked="checked" disabled="disabled"/>
+                  <span></span>
+                </label>
+            </td>
+           @else            
+           <td data-label="libera Prisma">
+                <label>
+                  <input type="checkbox" class="filled-in" disabled="disabled"/>
+                  <span></span>
+                </label>
+            </td>
+            @endif 
+          
 
        </tr>
      @endforeach
-     </form>
    </tbody>
  </table>
 
