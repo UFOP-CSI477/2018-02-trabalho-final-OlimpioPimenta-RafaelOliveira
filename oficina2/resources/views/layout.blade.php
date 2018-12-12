@@ -103,6 +103,8 @@
   <script src="{{URL::asset('//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js')}}"></script>
   <script>
   $(document).ready(function(){
+    $('select').formSelect();
+
       $('#minhaTabela').DataTable({
           "language": {
                 "lengthMenu": "Mostrando _MENU_ registros por página",
@@ -112,9 +114,10 @@
                 "infoFiltered": "(filtrado de _MAX_ registros no total)"
             }
         });
+
         // $('.modal').modal();
 
-         $('.modal').modal({
+      $('.modal').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
       inDuration: 300, // Transition in duration
@@ -124,12 +127,17 @@
       ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
         alert("Ready");
         console.log(modal, trigger);
-      },
-      complete: function() { alert('Closed'); } // Callback for Modal close
-    }
-  );
+      }, complete: function() { alert('Closed'); } // Callback for Modal close 
+      });
+
+
+      function form_submit() {
+        document.getElementById("#enviar").submit();
+   }  
   });
   </script>
+  
+
 
    </body>
  </html>
