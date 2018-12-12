@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Statusos;
 
 class StatusOSController extends Controller
 {
@@ -13,7 +14,8 @@ class StatusOSController extends Controller
      */
     public function index()
     {
-        return view('statusos.index');
+        $statusos = Statusos::orderBy('descricao')->get();
+        return view('statusos.index')->with('statusos',$statusos);
     }
 
     /**

@@ -10,13 +10,15 @@
 
                 <div class="card-body">
                 <div class="form-group row mb-0">
-                        
+                            
+                        </div>
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6 text-md-right">
-dasd
+                            <div class="col-md-8 text-md-right">
+                            <img src="img/login.png" class="responsive-img">
+                            <!-- <img src="https://img.icons8.com/color/96/000000/gender-neutral-user.png"> -->
                                         
                             </div>
                         </div>
