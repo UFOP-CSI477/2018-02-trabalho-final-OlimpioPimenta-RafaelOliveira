@@ -129,7 +129,6 @@
         });
         $('select').formSelect();
 
-
         function form_submit() {
         document.getElementById("paymentitrform").submit();
         }  
