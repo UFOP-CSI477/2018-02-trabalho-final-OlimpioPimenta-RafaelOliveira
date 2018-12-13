@@ -28,7 +28,7 @@
          <form class="col s12" method="POST" action="{{route('equipe.update',$editar->id)}}">
           @csrf
           @method('PATCH')
-              <h2>{{$editar->id}}</h2>
+
             <div class="row">
                <div class="input-field col s12">
                   <input id="cod_equipe" type="text" class="validate" value="{{$editar->cod_equipe}}" name="cod_equipe">
@@ -63,12 +63,12 @@
           
                @if($editar->negrito_letra_prog==1)
                <label>
-                  <input type="checkbox" name="negrito_letra_prog" checked="checked" value="0"/>
+                  <input type="checkbox" name="negrito_letra_prog" checked="checked" value="1"/>
                     <span>Negrito.Letra Prog.</span>
                 </label>
                 @else
                 <label>
-                  <input type="checkbox" name="negrito_letra_prog"/>
+                  <input type="checkbox" name="negrito_letra_prog" value="1"/>
                     <span>Negrito.Letra Prog.</span>
 
                 </label>
@@ -171,8 +171,8 @@
                </div>
             </div>
             <div clas="row" align="right">
-              <a href="/equipe" class="btn modal-trigger">Cancelar</a>
-              <button type="submit" data-target="modal1" class="btn modal-trigger">Incluir</button>
+              <a href="/equipe" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
+              <button type="submit" data-target="modal1" class="btn modal-trigger">Atualizar<i class="material-icons right">autorenew</i></button>
             </div>
             <br/>
          </form>

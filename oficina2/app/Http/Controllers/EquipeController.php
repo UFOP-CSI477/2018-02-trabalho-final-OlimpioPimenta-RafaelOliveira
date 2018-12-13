@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Equipe;
+use Illuminate\Support\Facades\Input;
 
 class EquipeController extends Controller
 {
@@ -36,7 +37,9 @@ class EquipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->merge(['negrito_produt'=>Input::has('negrito_produt')?true:false]);
+        $request->merge(['negrito_letra_prog'=>Input::has('negrito_letra_prog')?true:false]);
+        // dd($request);
         Equipe::create($request->all());
         return redirect()->route('equipe.index');
     }
@@ -73,11 +76,15 @@ class EquipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Equipe $objeto)
+    public function update(Request $request, Equipe $equipe)
     {
         //
-        $objeto->fill($request->all());
-        $objeto->save();
+        
+        $request->merge(['negrito_produt'=>Input::has('negrito_produt')?true:false]);
+        $request->merge(['negrito_letra_prog'=>Input::has('negrito_letra_prog')?true:false]);
+        dd($request->all());
+        $equipe->fill($request->all());
+        $equipe->save();
         return redirect()->route('equipe.index');
     }
 
@@ -87,8 +94,11 @@ class EquipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Equipe $equipe)
     {
         //
+        //dd($equipe->all());
+        $equipe->delete();
+        return redirect()->route('equipe.index');
     }
 }
