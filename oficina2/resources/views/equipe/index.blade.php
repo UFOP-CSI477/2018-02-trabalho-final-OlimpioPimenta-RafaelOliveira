@@ -65,93 +65,113 @@
 <!-- Modal Structure -->
 <div id="modal1" class="modal modal-fixed-footer">
    <div class="modal-content">
-    <form method="post" action="{{route('equipe.store')}}">
+    <form method="POST" action="{{route('equipe.store')}}" id="enviar">
       <h4>Nova Equipe</h4>
       <div class="row">
          <form class="col s12">
             <div class="row">
                <div class="input-field col s12">
-                  <input id="cod_equipe" type="text" class="validate">
+                  <input id="cod_equipe" type="text" class="validate" name="cod_equipe">
                   <label for="cod_equipe">Código Da Equipe</label>
                </div>
                <div class="input-field col s12">
-                  <input id="descricao" type="text" class="validate">
+                  <input id="descricao" type="text" class="validate" name="descricao">
                   <label for="descricao">Descrição</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <select>
+                  <select name="tipe_letra_prog">
                      <option value="" disabled selected>Choose your option</option>
-                     <option value="1">Option 1</option>
-                     <option value="2">Option 2</option>
-                     <option value="3">Option 3</option>
+                     <option value="Arial">Arial</option>
+                     <option value="Calibri">Calibri</option>
+                     <option value="Courier">Courier</option>
+                     <option value="Geneva">Geneva</option>
+                     <option value="Helvetica">Helvetica</option>
+                     <option value="mono">mono</option>
+                     <option value="sans"-serif>sans-serif</option>
+                     <option value="serif">serif</option>
+                     <option value="Tahoma">Tahoma</option>
+                     <option value="Times">Times</option>
+                     <option value="Verdana">Verdana</option>
                   </select>
                   <label>Tipo Letra Prog.</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="tam_letra_prog" type="text" class="validate">
+                  <input id="tam_letra_prog" type="text" class="validate" name="tam_letra_prog">
                   <label for="tam_letra_prog">Tam.Letra Prog.</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="altura_linha_prog" type="text" class="validate">
+                  <input id="altura_linha_prog" type="text" class="validate" name="altura_linha_prog">
                   <label for="altura_linha_prog">Altura.Linha Prog.</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="caracteres_por_divisao" type="text" class="validate">
+                  <input id="caracteres_por_divisao" type="text" class="validate" name="caracters_por_divisao">
                   <label for="caracteres_por_divisao">Caracteres por Divisão</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="altura_linha_apont" type="text" class="validate">
+                  <input id="altura_linha_apont" type="text" class="validate" name="altura_linha_apont">
                   <label for="altura_linha_apont">Altura linha Apont.</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <select>
-                     <option value="" disabled selected>Choose your option</option>
-                     <option value="1">Option 1</option>
-                     <option value="2">Option 2</option>
-                     <option value="3">Option 3</option>
+                  <select name="tipo_letra_produt">>
+                     <option disabled selected>Choose your option</option>
+                     <option value="Arial">Arial</option>
+                     <option value="Calibri">Calibri</option>
+                     <option value="Courier">Courier</option>
+                     <option value="Geneva">Geneva</option>
+                     <option value="Helvetica">Helvetica</option>
+                     <option value="mono">mono</option>
+                     <option value="sans-serif">sans-serif</option>
+                     <option value="serif">serif</option>
+                     <option value="Tahoma">Tahoma</option>
+                     <option value="Times">Times</option>
+                     <option value="Verdana">Verdana</option>
                   </select>
                   <label>Tipo letra Produt.</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="negrito_produt" type="text" class="validate">
-                  <label for="negrito_produt">Negrito Produt.</label>
+
+               <label>
+                  <input type="checkbox" name="negrito_letra_prog" value="true" name="negrito_letra_prog"/>
+                    <span>Negrito.Letra Prog.</span>
+                </label>
+
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="tam_letra_produt" type="text" class="validate">
+                  <input id="tam_letra_produt" type="text" class="validate" name="tam_letra_produt">
                   <label for="tam_letra_produt">Tam. letra Produt.</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="tam_letra_hora" type="text" class="validate">
+                  <input id="tam_letra_hora" type="text" class="validate" name="tam_letra_hora">
                   <label for="tam_letra_hora">Tam. letra hora.</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="altura_linha_hora" type="text" class="validate">
+                  <input id="altura_linha_hora" type="text" class="validate" name="altura_linha_hora">
                   <label for="altura_linha_hora">Altura linha Hora</label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input id="tempo_de_atualizacao" type="text" class="validate">
+                  <input id="tempo_de_atualizacao" type="text" class="validate" name="tempo_de_atualizacao">
                   <label for="tempo_de_atualizacao">Tempo de Atualização</label>
                </div>
             </div>
@@ -160,9 +180,9 @@
    </div>
    </form>
    <div class="modal-footer">
-      <button class="modal-action modal-close waves-effect waves-green btn-flat ">cancelar</button>
+      <button class="modal-action modal-close waves-effect waves-green btn-flat" >cancelar</button>
       <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">cancelar</a> -->
-      <button type="submit" id="enviar" onclick="form_submit()" class="modal-action modal-close waves-effect waves-green btn-flat ">Enviar</button>
+      <button type="submit"  onclick="form_submit()" class="modal-action modal-send waves-effect waves-green btn-flat ">Enviar</button>
       <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">enviar</a> -->
    </div>
 </div>
