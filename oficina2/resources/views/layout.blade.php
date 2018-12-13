@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
    <head>
    <meta charset="UTF-8">
@@ -102,6 +103,7 @@
     <!-- codigo para paginação das tablelas -->
   <script src="{{URL::asset('//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js')}}"></script>
   <script>
+
       $(document).ready(function(){
           $('#minhaTabela').DataTable({
               "language": {
@@ -129,9 +131,6 @@
         });
         $('select').formSelect();
 
-        function form_submit() {
-        document.getElementById("paymentitrform").submit();
-        }  
       });
  
   </script>
