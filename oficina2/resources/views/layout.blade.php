@@ -128,6 +128,10 @@
           complete: function() { alert('Closed'); } // Callback for Modal close
         });
         $('select').formSelect();
+
+        function form_submit() {
+        document.getElementById("paymentitrform").submit();
+        }  
       });
  
   </script>

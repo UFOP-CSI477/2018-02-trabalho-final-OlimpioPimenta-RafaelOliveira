@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Equipe;
+use Illuminate\Support\Facades\Input;
 
 class EquipeController extends Controller
 {
@@ -73,11 +74,17 @@ class EquipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Equipe $objeto)
+    public function update(Request $request, Equipe $equipe)
     {
-        //
-        $objeto->fill($request->all());
-        $objeto->save();
+        //dd(Input::has('negrito_letra_prog'));
+
+        $request->merge(['negrito_produt'=>Input::has('negrito_produt')?true:false]);
+        $request->merge(['negrito_letra_prog'=>Input::has('negrito_letra_prog')?true:false]);
+        
+        //dd($request);
+
+        $equipe->fill($request->all());
+        $equipe->save();
         return redirect()->route('equipe.index');
     }
 
