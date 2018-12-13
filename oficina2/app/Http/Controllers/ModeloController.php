@@ -37,7 +37,9 @@ class ModeloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        Modelo::create($request->all());
+        return redirect()->route('modelo.index');
     }
 
     /**
@@ -57,9 +59,10 @@ class ModeloController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Modelo $modelo)
     {
         //
+        return view('equipe.edit')->with('editar',$modelo);
     }
 
     /**
@@ -69,9 +72,13 @@ class ModeloController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Modelo $modelo)
     {
         //
+        //dd($request->all());
+        $modelo->fill($request->all());
+        $modelo->save();
+        return redirect()->route('modelo.index');
     }
 
     /**
@@ -80,8 +87,10 @@ class ModeloController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Modelo $modelo)
     {
         //
+        $modelo->delete();
+        return redirect()->route('modelo.index');
     }
 }

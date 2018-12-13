@@ -55,8 +55,8 @@
       @csrf
         <div clas="row">
             <div class="input-field col s12">
-              <input id="cod_equipe" type="text" class="validate" name="cod_equipe">
-              <label for="cod_equipe">Nome do Modelo</label>
+              <input id="nome" type="text" class="validate" name="nome">
+              <label for="nome">Nome do Modelo</label>
             </div>
         </div>
   </div>
