@@ -82,7 +82,7 @@ class EquipeController extends Controller
         
         $request->merge(['negrito_produt'=>Input::has('negrito_produt')?true:false]);
         $request->merge(['negrito_letra_prog'=>Input::has('negrito_letra_prog')?true:false]);
-        dd($request->all());
+        //dd($request->all());
         $equipe->fill($request->all());
         $equipe->save();
         return redirect()->route('equipe.index');

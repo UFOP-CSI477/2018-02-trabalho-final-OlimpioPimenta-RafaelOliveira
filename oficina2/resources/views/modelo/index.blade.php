@@ -51,7 +51,7 @@
     </div>
   
       <br/>
-      <form method="POST" action="{{route('equipe.store')}}"   class="col s12">
+      <form method="POST" action="{{route('modelo.store')}}"   class="col s12">
       @csrf
         <div clas="row">
             <div class="input-field col s12">
@@ -70,7 +70,7 @@
 
  <!-- Modal Structure Deletar -->
  <div id="modal2" class="modal modal-fixed-footer">
- <form method="post" action="{{route('equipe.destroy',$w->id)}}">
+ <form method="post" action="{{route('modelo.destroy',$w->id)}}">
  @csrf 
  @method('DELETE')
     <div class="modal-content">
