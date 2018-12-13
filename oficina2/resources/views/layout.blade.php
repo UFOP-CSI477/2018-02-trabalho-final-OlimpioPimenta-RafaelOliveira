@@ -129,6 +129,7 @@
           },
           complete: function() { alert('Closed'); } // Callback for Modal close
         });
+        // select usando materialize designer
         $('select').formSelect();
 
       });
