@@ -1,6 +1,3 @@
-<h3>Log Carga</h3>
-<img src="img/log_carga.png" width="100px" height="100px">
-
 @extends('layout')
 
 @section('title', 'Parallax - Log de Carga')
@@ -15,7 +12,6 @@
     <div class="card-stacked">
       <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">Log de Carga</span>
-         <button data-toogle="incluir" data-target="incluir" class="btn modal-trigger">Incluir</button>
       </div>
     </div>
   </div>
@@ -39,12 +35,19 @@
     </thead>
     <tbody>
 
-    @foreach($statusagendamentos as $w)
+    @foreach($logcargas as $w)
        <tr>
           <th scope="col"><a href="" target="_parent"><i class="material-icons">edit</i></a></th>
           <th scope="col"><a href="" target="_blank"><i class="material-icons">remove_circle</i></a></th>
-          <td data-label="Código do Status">{{ $w->codigo }}</td>
-          <td data-label="Descrição do Status">{{ $w->descricao }}</td>
+          <td data-label="Tipo Registro">{{ $w->tipo_registro }}</td>
+          <td data-label="Ação">{{ $w->acao }}</td>
+          <td data-label="OS">{{ $w->os }}</td>
+          <td data-label="Status">{{ $w->status }}</td>
+          <td data-label="Data Carga">{{ $w->data_carga }}</td>
+          <td data-label="Chapa">{{ $w->chapa }}</td>
+          <td data-label="Process.">{{ $w->processado }}</td>
+          <td data-label="Mensagem">{{ $w->erro_carga }}</td>
+
 
        </tr>
      @endforeach
