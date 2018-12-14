@@ -1,7 +1,3 @@
-<h3>OS</h3>
-<img src="img/os.png" width="100px" height="100px">
-
-
 @extends('layout')
 
 @section('title', 'Parallax -OS')
@@ -40,17 +36,17 @@
     </thead>
     <tbody>
 
-    @foreach($oss as $w)
+  
        <tr>
           <th scope="col"><a href="" target="_parent"><i class="material-icons">edit</i></a></th>
           <th scope="col"><a href="" target="_blank"><i class="material-icons">remove_circle</i></a></th>
-          <td data-label="Código">{{ $w->codigo }}</td>
-          <td data-label="Descrição">{{ $w->descricao }}</td>
-          <td data-label="Cor" style="color: {{ $w->cor }};">{{ $w->cor }}</td>
+          <td data-label="Código"></td>
+          <td data-label="Descrição"></td>
+          <td data-label="Cor" style="color:;"></td>
           
 
        </tr>
-     @endforeach
+   
    </tbody>
  </table>
 

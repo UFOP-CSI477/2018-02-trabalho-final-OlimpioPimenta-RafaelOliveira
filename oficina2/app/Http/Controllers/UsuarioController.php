@@ -18,6 +18,10 @@ class UsuarioController extends Controller
 	//     $this->middleware('auth');
 	// }
 
+	public function __construct() {
+     
+         $this->middleware('auth');
+    }
 	public function index()
 	{
 		$usuario = Usuario::orderBy('usuario')->get();

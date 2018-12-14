@@ -11,10 +11,14 @@ class OSController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+     
+         $this->middleware('auth');
+    }
+    
     public function index()
     {
-        $os = OS::orderBy('os')->get();
-        return view('os.index')->with('oss',$os);
+        return view('os.index');
         
     }
 

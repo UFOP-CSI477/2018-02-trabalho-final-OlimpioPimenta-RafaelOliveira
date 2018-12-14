@@ -21,7 +21,12 @@ class DatabaseSeeder extends Seeder
         // $this->call(StatusossTableSeeder::class);
         // $this->call(TiposTableSeeder::class);
         // $this->call(UsuariosTableSeeder::class);
-        $this->call(FuncionariosTableSeeder::class);
+        // $this->call(FuncionariosTableSeeder::class);
+        $this->call(TiposTableSeeder::class);
+        $this->call(ExcecaocargasTableSeeder::class);
+        $this->call(IntervaloagendasTableSeeder::class);
+        $this->call(LogcargasTableSeeder::class);
+        $this->call(PrimasTableSeeder::class);
 
     }
 }
