@@ -1,124 +1,162 @@
-   <h3>Agendamento</h3>
-   <img src="img/agendamento.png" width="100px" height="100px">
-     <div class="container-table100">
-         <div class="wrap-table100">
-            <div class="table100 ver1 m-b-110">
-               <table>
-                  <thead>
-                     <tr>
-                        <th scope="col">Account</th>
-                        <th scope="col">Due Date</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Period</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td data-label="Account">Visa - 3412</td>
-                        <td data-label="Due Date">04/01/2016</td>
-                        <td data-label="Amount">$1,190</td>
-                        <td data-label="Period">03/01/2016 - 03/31/2016</td>
-                     </tr>
-                     <tr>
-                        <td scope="row" data-label="Account">Visa - 6076</td>
-                        <td data-label="Due Date">03/01/2016</td>
-                        <td data-label="Amount">$2,443</td>
-                        <td data-label="Period">02/01/2016 - 02/29/2016</td>
-                     </tr>
-                     <tr>
-                        <td scope="row" data-label="Account">Corporate AMEX</td>
-                        <td data-label="Due Date">03/01/2016</td>
-                        <td data-label="Amount">$1,181</td>
-                        <td data-label="Period">02/01/2016 - 02/29/2016</td>
-                     </tr>
-                     <tr>
-                        <td scope="row" data-label="Acount">Visa - 3412</td>
-                        <td data-label="Due Date">02/01/2016</td>
-                        <td data-label="Amount">$842</td>
-                        <td data-label="Period">01/01/2016 - 01/31/2016</td>
-                     </tr>
-                     <tr>
-                        <td scope="row" data-label="Acount">Visa - 3412</td>
-                        <td data-label="Due Date">02/01/2016</td>
-                        <td data-label="Amount">$842</td>
-                        <td data-label="Period">01/01/2016 - 01/31/2016</td>
-                     </tr>
-                  </tbody>
-               </table>
+
+
+@extends('layout')
+@section('title', 'Parallax - Usuário')
+@section('content')
+<div class="col s12 m5">
+   <div class="card horizontal card-panel teal">
+      <div class="card-image">
+         <img src="img/agendamento.png" width="80px" height="80px">
+      </div>
+      <div class="card-stacked">
+         <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Agendamento</span>
+            <button data-toogle="incluir" data-target="incluir" class="btn modal-trigger">Incluir</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- 
+bgcolor="#F10303" emergencia
+bgcolor="#FE6400" prioridade
+bgcolor="#FDCA00" urgencia
+bgcolor="#00A200" pouco urgente
+bgcolor="#072291" nao urgente -->
+
+
+<table class="highlight centered responsive-table">
+   <thead>
+      <tr>
+         <th scope="col"></th>
+         <th scope="col"></th>
+         <th scope="col">ID</th>
+         <th scope="col">CLIENTE</th>
+         <th scope="col">PLACA</th>
+         <th scope="col">DD</th>
+         <th scope="col">TELEFONE</th>
+         <th scope="col">DATA</th>
+         <th scope="col">HORÁRIO</th>
+         <th scope="col">DATA COMPROMETIDA</th>
+         <th scope="col">HORÁRIO COMPROMETIDA</th>
+         <th scope="col">RETORNO</th>
+         <th scope="col">CHEGADA</th>
+      </tr>
+   </thead>
+   <tbody>
+      @foreach($agendamento as $w)
+      <tr bgcolor="">
+         <th class="col"><a href="{{ route('usuario.edit', $w->id) }}" class="waves-effect waves-light btn yellow">Editar</a></th>
+         <th class="col">
+            <form method="post" action="{{ route('usuario.destroy', $w->id) }}" onsubmit="return confirm('Confirma exclusão do Usuário: {{ $w->usuario }} ?');" >
+               @csrf
+               @method('DELETE')
+               <input class="btn red" type="submit" value="Excluir">
+            </form>
+         </th>
+
+         <td data-label="id">{{ $w->id }}</td>
+         <td data-label="cliente">{{ $w->cliente }}</td>
+         <td data-label="placa">{{ $w->placa }}</td>
+         <td data-label="dd">{{ $w->dd }}</td>
+         <td data-label="telefone">{{ $w->telefone }}</td>
+         <td data-label="data">{{ $w->data }}</td>
+         <td data-label="horario">{{ $w->horario }}</td>
+         <td data-label="data_comprometida">{{ $w->data_prometida }}</td>
+         <td data-label="horario_comprometido">{{ $w->horario_prometido }}</td>
+         <td data-label="retorno">{{ $w->retorno }}</td>
+         <td data-label="chegada">{{ $w->chegada }}</td>
+         @if(($w->chegada) == 'Emergência')
+            bgcolor="#F10303"
+         @elseif(($w->chegada) == 'Prioridade')
+            bgcolor="#FE6400"
+         @elseif(($w->chegada) == 'Urgência')
+            bgcolor="#FDCA00"
+         @elseif(($w->chegada) == 'Pouco Urgente')
+            bgcolor="#00A200"
+         @else
+            bgcolor="#072291"
+         @endif
+      </tr>
+      @endforeach
+   </tbody>
+</table>
+<div id="incluir" class="modal modal-fixed-footer">
+   <form method="post" action="{{ route('agendamento.store') }}" class="col s12">
+      <div class="modal-content">
+         @csrf
+         <div class="modal-body">
+            <h4>Novo Agendamento</h4>
+            <div class="row">
+               <div class="input-field col s12">
+                  <input type="text" name="cliente">
+                  <label>Cliente</label>
+               </div>
             </div>
-            <div class="modal">
-               <div class="modal-content">
-                  <nav class="close-buttonb">&times;</nav>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th colspan="7">Agendamento</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td>Consultor 1</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Tipo</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Cliente</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Placa</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Modelo</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>DDD</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Telefone</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Data</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Horário</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Data Prometida</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Retorno</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Chegada</td>
-                           <td><input class="form-control" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <td>Status</td>
-                           <td><input class="form-control" type="text" id="form-control-2" /></td>
-                        </tr>
-                        <tr>
-                           <th colspan="7">
-                              <input type="submit" name="enviar" value="enviar" />
-                              <input type="reset" name="limpar" value="limpar" />
-                           </th>
-                        </tr>
-                     </tbody>
-                  </table>
+            <div class="row">
+               <div class="input-field col s12">
+                  <input type="text" name="placa" >
+                  <label>Placa (AAA-0000)</label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12 m6">
+                  <input type="text" name="dd">
+                  <label>DD</label>
+               </div>
+               <div class="input-field col s12 m6">
+                  <input type="tel" name="telefone">
+                  <label>Telefone (xxxxx-xxxx)</label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12 m6">
+                  <input type="date" name="data">
+                  <label>Data</label>         
+               </div>
+               <div class="input-field col s12 m6">
+                  <input type="text" name="horario">
+                  <label>Horário (00:00)</label>         
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12 m6">
+                  <input type="date" name="data_prometida">
+                  <label>Data Prometida*</label>         
+               </div>
+               <div class="input-field col s12 m6">
+                  <input type="text" name="horario_prometido">
+                  <label>Horário Prometido (00:00)*</label>         
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12 m6">
+                  <select class="icons" name="retorno">
+                     <option value="1" >Sim</option>
+                     <option value="0" >Não</option>
+                  </select>
+                  <label>Retorno</label>
+               </div>
+               <div class="input-field col s12 m6">
+                  <select class="icons" name="chegada">
+                     <option value="Emergência">Emergência</option>
+                     <option value="Prioridade">Prioridade</option>
+                     <option value="Urgência">Urgência</option>
+                     <option value="Pouco Urgente">Pouco Urgente</option>
+                     <option value="Não Urgente">Não Urgente</option>
+                  </select>
+                  <label>Chegada</label>
                </div>
             </div>
          </div>
-
       </div>
-</li>
+      <div class="modal-footer">
+         <a href="#" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
+         <button class="btn waves-effect waves-light" type="submit">Adicionar<i class="material-icons right">add</i>
+         </button>
+         <p align="left">*Tempo máximo de conserto: 10 dias</p>
+      </div>
+   </form>
+</div>
+@endsection
+
