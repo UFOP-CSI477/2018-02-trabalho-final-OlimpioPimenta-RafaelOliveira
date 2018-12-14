@@ -25,9 +25,10 @@
     @if ( Session::has('mensagem') )
     <p><strong>{{ Session::get('mensagem') }}</strong></p>
     @endif
-    <nav class="navbar-layout">
+    <nav class="teal lighten-4">
       <div class="nav-wrapper" >
-        <a href="/" class="brand-logo" style="padding:10px"><img src="{{URL::asset('img/brand.png')}}" class="responsive-img" width="160px" height="130px"></a>
+        <a href="/" class="" style="padding:10px">Veloster Center BH</a>
+        <!-- <a href="/" class="brand-logo" style="padding:10px"><img src="{{URL::asset('img/brand.png')}}" class="responsive-img" width="160px" height="130px"></a> -->
         <ul class="right hide-on-med-and-down">
           <li><a href=""><i class="material-icons left">search</i>Pesquisa</a></li>
           <li><a href="/home"><i class="material-icons right">account_circle</i>Login</a></li>
@@ -35,7 +36,7 @@
       </div>
     </nav>
     @yield('content')
-    <footer class="page-footer orange">
+    <footer class="page-footer teal">
       <div class="container">
         <div class="row">
           <div class="col l3 s6">

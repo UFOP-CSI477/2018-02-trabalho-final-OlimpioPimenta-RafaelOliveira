@@ -28,8 +28,8 @@ class AgendamentoController extends Controller
     {
         $modelo = Modelo::orderBy('id')->get();
         $funcionario = Funcionario::orderBy('id')->get();
-        $tipo = Tipo::orderBy('id')>get();
-        $status_agenda = StatusAgendamento:::ordeBy('')->get();
+        $tipo = Tipo::orderBy('id')->get();
+        $status_agenda = StatusAgendamento::orderBy('id')->get();
         $agendamento = Agendamento::orderBy('cliente')->get();
         return view('agendamento.index')->with('agendamento', $agendamento)->with('modelo', $modelo)->with('tipo', $tipo)->with('status', $status_agenda)->with('funcionario', $funcionario);
     }

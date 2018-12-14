@@ -95,30 +95,45 @@ bgcolor="#072291" nao urgente -->
          <div class="modal-body">
             <h4>Novo Agendamento</h4>
             <div class="row">
-               <div class="input-field col s12 m6">
+               <div class="input-field col s12">
                   <select class="icons" name="consultor">
-                     @foreach
-                        <option value="{{ $funcionario->id }}">{{ $funcionario->nome }}</option>
+                     @foreach($funcionario as $func)
+                        <option value="{{ $func->id }}">{{ $func->nome }}</option>
                      @endforeach
                   </select>
                   <label>Consultor</label>
                </div>
+            </div>
+            <div class="row">
                <div class="input-field col s12 m6">
-                  <select class="icons" name="chegada">
-                     <option value="Emergência">Emergência</option>
-                     <option value="Prioridade">Prioridade</option>
-                     <option value="Urgência">Urgência</option>
-                     <option value="Pouco Urgente">Pouco Urgente</option>
-                     <option value="Não Urgente">Não Urgente</option>
-                  </select>
-                  <label>Chegada</label>
+                  <input type="text" name="funcionario_id">
+                  <label></label>
+               </div>
+               <div class="input-field col s12 m6">
+                  <input type="tel" name="modelo_id">
+                  <label></label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12 m6">
+                  <input type="text" name="status_agenda_id">
+                  <label></label>
+               </div>
+               <div class="input-field col s12 m6">
+                  <input type="tel" name="tipo_id">
+                  <label></label>
                </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
-                  <input type="text" name="cliente">
-                  <label>Cliente</label>
+                  <select class="icons" name="tipo">
+                     @foreach
+                        <option value=""></option>
+                     @endforeach
+                  </select>
+                  <label>Tipo</label>
                </div>
+            </div>
             <div class="row">
                <div class="input-field col s12">
                   <input type="text" name="cliente">
@@ -129,6 +144,16 @@ bgcolor="#072291" nao urgente -->
                <div class="input-field col s12">
                   <input type="text" name="placa" >
                   <label>Placa (AAA-0000)</label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12">
+                  <select class="icons" name="modelo">
+                     @foreach
+                        <option value=""</option>
+                     @endforeach
+                  </select>
+                  <label>Modelo</label>
                </div>
             </div>
             <div class="row">
@@ -147,29 +172,115 @@ bgcolor="#072291" nao urgente -->
                   <label>Data</label>         
                </div>
                <div class="input-field col s12 m6">
-                  <input type="text" name="horario">
-                  <label>Horário (00:00)</label>         
-               </div>
+                  <select class="icons" name="horario">
+                        <option value=""></option>
+                        <option value='08:00:00'>08:00:00</option>
+                        <option value='08:15:00'>08:15:00</option>
+                        <option value='08:30:00'>08:30:00</option>
+                        <option value='08:45:00'>08:45:00</option>
+                        <option value='09:00:00'>09:00:00</option>
+                        <option value='09:15:00'>09:15:00</option>
+                        <option value='09:30:00'>09:30:00</option>
+                        <option value='09:45:00'>09:45:00</option>
+                        <option value='10:00:00'>10:00:00</option>
+                        <option value='10:15:00'>10:15:00</option>
+                        <option value='10:30:00'>10:30:00</option>
+                        <option value='10:45:00'>10:45:00</option>
+                        <option value='11:00:00'>11:00:00</option>
+                        <option value='11:15:00'>11:15:00</option>
+                        <option value='11:30:00'>11:30:00</option>
+                        <option value='11:45:00'>11:45:00</option>
+                        <option value='12:00:00'>12:00:00</option>
+                        <option value='12:15:00'>12:15:00</option>
+                        <option value='12:30:00'>12:30:00</option>
+                        <option value='12:45:00'>12:45:00</option>
+                        <option value='13:00:00'>13:00:00</option>
+                        <option value='13:15:00'>13:15:00</option>
+                        <option value='13:30:00'>13:30:00</option>
+                        <option value='13:45:00'>13:45:00</option>
+                        <option value='14:00:00'>14:00:00</option>
+                        <option value='14:15:00'>14:15:00</option>
+                        <option value='14:30:00'>14:30:00</option>
+                        <option value='14:45:00'>14:45:00</option>
+                        <option value='15:00:00'>15:00:00</option>
+                        <option value='15:15:00'>15:15:00</option>
+                        <option value='15:30:00'>15:30:00</option>
+                        <option value='15:45:00'>15:45:00</option>
+                        <option value='16:00:00'>16:00:00</option>
+                        <option value='16:15:00'>16:15:00</option>
+                        <option value='16:30:00'>16:30:00</option>
+                        <option value='16:45:00'>16:45:00</option>
+                        <option value='17:00:00'>17:00:00</option>
+                        <option value='17:15:00'>17:15:00</option>
+                        <option value='17:30:00'>17:30:00</option>
+                        <option value='17:45:00'>17:45:00</option>
+                        <option value='18:00:00'>18:00:00</option>    
+                  </select>
+                  <label>Horário</label>
+               </div>            
             </div>
             <div class="row">
                <div class="input-field col s12 m6">
                   <input type="date" name="data_prometida">
-                  <label>Data Prometida*</label>         
+                  <label>Data Prometida</label>         
                </div>
                <div class="input-field col s12 m6">
-                  <input type="text" name="horario_prometido">
-                  <label>Horário Prometido (00:00)*</label>         
-               </div>
+                  <select class="icons" name="horario_prometido">
+                        <option value=""></option>
+                        <option value='08:00:00'>08:00:00</option>
+                        <option value='08:15:00'>08:15:00</option>
+                        <option value='08:30:00'>08:30:00</option>
+                        <option value='08:45:00'>08:45:00</option>
+                        <option value='09:00:00'>09:00:00</option>
+                        <option value='09:15:00'>09:15:00</option>
+                        <option value='09:30:00'>09:30:00</option>
+                        <option value='09:45:00'>09:45:00</option>
+                        <option value='10:00:00'>10:00:00</option>
+                        <option value='10:15:00'>10:15:00</option>
+                        <option value='10:30:00'>10:30:00</option>
+                        <option value='10:45:00'>10:45:00</option>
+                        <option value='11:00:00'>11:00:00</option>
+                        <option value='11:15:00'>11:15:00</option>
+                        <option value='11:30:00'>11:30:00</option>
+                        <option value='11:45:00'>11:45:00</option>
+                        <option value='12:00:00'>12:00:00</option>
+                        <option value='12:15:00'>12:15:00</option>
+                        <option value='12:30:00'>12:30:00</option>
+                        <option value='12:45:00'>12:45:00</option>
+                        <option value='13:00:00'>13:00:00</option>
+                        <option value='13:15:00'>13:15:00</option>
+                        <option value='13:30:00'>13:30:00</option>
+                        <option value='13:45:00'>13:45:00</option>
+                        <option value='14:00:00'>14:00:00</option>
+                        <option value='14:15:00'>14:15:00</option>
+                        <option value='14:30:00'>14:30:00</option>
+                        <option value='14:45:00'>14:45:00</option>
+                        <option value='15:00:00'>15:00:00</option>
+                        <option value='15:15:00'>15:15:00</option>
+                        <option value='15:30:00'>15:30:00</option>
+                        <option value='15:45:00'>15:45:00</option>
+                        <option value='16:00:00'>16:00:00</option>
+                        <option value='16:15:00'>16:15:00</option>
+                        <option value='16:30:00'>16:30:00</option>
+                        <option value='16:45:00'>16:45:00</option>
+                        <option value='17:00:00'>17:00:00</option>
+                        <option value='17:15:00'>17:15:00</option>
+                        <option value='17:30:00'>17:30:00</option>
+                        <option value='17:45:00'>17:45:00</option>
+                        <option value='18:00:00'>18:00:00</option>    
+                  </select>
+                  <label>Horário Prometido</label>
+               </div>             
             </div>
             <div class="row">
-               <div class="input-field col s12 m6">
+               <div class="input-field col s12 m4">
                   <select class="icons" name="retorno">
                      <option value="1" >Sim</option>
                      <option value="0" >Não</option>
                   </select>
                   <label>Retorno</label>
                </div>
-               <div class="input-field col s12 m6">
+               <div class="input-field col s12 m4">
                   <select class="icons" name="chegada">
                      <option value="Emergência">Emergência</option>
                      <option value="Prioridade">Prioridade</option>
@@ -178,6 +289,14 @@ bgcolor="#072291" nao urgente -->
                      <option value="Não Urgente">Não Urgente</option>
                   </select>
                   <label>Chegada</label>
+               </div>
+               <div class="input-field col s12 m4">
+                  <select class="icons" name="status">
+                     @foreach
+                        <option value=""></option>
+                     @endforeach
+                  </select>
+                  <label>Status</label>
                </div>
             </div>
          </div>
