@@ -68,21 +68,7 @@
 
 
 
- <!-- Modal Structure Deletar -->
- <div id="modal2" class="modal modal-fixed-footer">
- <form method="post" action="{{route('equipe.destroy',$w->id)}}"  id="deletar" >
- @csrf 
- @method('DELETE')
-    <div class="modal-content">
-      <h4>Deseja realmente Excluir o elemento?  <span id="spnText"></span></h4>
-    </div>
-    <input type="hidden"  name="category_id" id="cat_id" value=""/>
-    <div class="modal-footer">
-    <a href="/equipe" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
-    <button type="submit" name="category_id" id="cat_id" class="btn modal-trigger">Remover<i class="material-icons right">delete</i></button>
-    </div>
-  </form>  
-  </div>
+
 
 
 <!-- Modal Structure Incluir-->
