@@ -17,6 +17,7 @@
    </div>
 </div>
 
+
 <!-- 
 bgcolor="#F10303" emergencia
 bgcolor="#FE6400" prioridade
@@ -42,7 +43,7 @@ bgcolor="#072291" nao urgente -->
          <th scope="col">DATA</th>
          <th scope="col">HORÁRIO</th>
          <th scope="col">DATA COMPROMETIDA</th>
-         <th scope="col">HORÁRIO COMPROMETIDA</th>
+         <th scope="col">HORÁRIO COMPROMETIDO</th>
          <th scope="col">RETORNO</th>
          <th scope="col">CHEGADA</th>
       </tr>
@@ -88,48 +89,26 @@ bgcolor="#072291" nao urgente -->
       @endforeach
    </tbody>
 </table>
+
 <div id="incluir" class="modal modal-fixed-footer">
    <form method="post" action="{{ route('agendamento.store') }}" class="col s12">
       <div class="modal-content">
          @csrf
-         <div class="modal-body">
-            <h4>Novo Agendamento</h4>
+
+          <div class="modal-body">
+             <h4>Novo Agendamento</h4>
             <div class="row">
                <div class="input-field col s12">
-                  <select class="icons" name="consultor">
-                     @foreach($funcionario as $func)
-                        <option value="{{ $func->id }}">{{ $func->nome }}</option>
-                     @endforeach
-                  </select>
+                  <input type="text" name="consultor">
                   <label>Consultor</label>
                </div>
-            </div>
-            <div class="row">
-               <div class="input-field col s12 m6">
-                  <input type="text" name="funcionario_id">
-                  <label></label>
-               </div>
-               <div class="input-field col s12 m6">
-                  <input type="tel" name="modelo_id">
-                  <label></label>
-               </div>
-            </div>
-            <div class="row">
-               <div class="input-field col s12 m6">
-                  <input type="text" name="status_agenda_id">
-                  <label></label>
-               </div>
-               <div class="input-field col s12 m6">
-                  <input type="tel" name="tipo_id">
-                  <label></label>
-               </div>
-            </div>
-            <div class="row">
                <div class="input-field col s12">
                   <select class="icons" name="tipo">
-                     @foreach
-                        <option value=""></option>
-                     @endforeach
+                     <option value=""></option>
+                     <option value="Almoço">Almoço</option> 
+                     <option value="Entregas">Entregas</option>   
+                     <option value="Agendados">Agendados</option>   
+                     <option value="Passantes">Passantes</option>                   
                   </select>
                   <label>Tipo</label>
                </div>
@@ -139,19 +118,32 @@ bgcolor="#072291" nao urgente -->
                   <input type="text" name="cliente">
                   <label>Cliente</label>
                </div>
+               <div class="input-field col s12">
+                  <select class="icons" name="status">
+                     <option value=""></option>
+                     <option value="agendado">agendado</option>
+                     <option value="marcado">marcado</option>
+                     <option value="resolvido">resolvido</option>
+                  </select>
+                  <label>Status</label>
+               </div>
             </div>
             <div class="row">
                <div class="input-field col s12">
                   <input type="text" name="placa" >
                   <label>Placa (AAA-0000)</label>
                </div>
-            </div>
-            <div class="row">
                <div class="input-field col s12">
                   <select class="icons" name="modelo">
-                     @foreach
-                        <option value=""</option>
-                     @endforeach
+                     <option value=""></option>
+                     <option value="A1">A1</option>
+                     <option value="A3">A3</option>
+                     <option value="A4">A4</option>
+                     <option value="A5">A5</option>
+                     <option value="Q3">Q3</option>
+                     <option value="Q5">Q5</option>
+                     <option value="Q6">Q6</option>
+
                   </select>
                   <label>Modelo</label>
                </div>
@@ -292,14 +284,25 @@ bgcolor="#072291" nao urgente -->
                </div>
                <div class="input-field col s12 m4">
                   <select class="icons" name="status">
-                     @foreach
                         <option value=""></option>
-                     @endforeach
+                        <option value="Programada">Programada</option>
+                        <option value="Em Execução">Em Execução</option>
+                        <option value="Entrege">Entrege</option>
+                        <option value="Pendente (a Programar)">Pendente (a Programar)</option>
+                        <option value="Pronta">Pronta</option>
+                        <option value="Lavagem">Lavagem</option>
+                        <option value="Aguardando Peça">Aguardando Peça</option>
+                        <option value="Aguardando Aprovação">Aguardando Aprovação</option>
+                        <option value="Cancelada">Cancelada</option>
+                        <option value="Reprogramar">Reprogramar</option>
+                        <option value="Demonstração">Demonstração</option>
+
+
                   </select>
                   <label>Status</label>
                </div>
             </div>
-         </div>
+          </div>         
       </div>
       <div class="modal-footer">
          <a href="#" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
@@ -309,5 +312,7 @@ bgcolor="#072291" nao urgente -->
       </div>
    </form>
 </div>
+
+
 @endsection
 

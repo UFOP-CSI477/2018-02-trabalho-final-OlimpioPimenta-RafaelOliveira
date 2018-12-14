@@ -7,27 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 class Agendamento extends Model
 {
     
-    protected $fillable=['consultor', 'tipo', 'cliente', 'placa', 'modelo', 'dd', 'telefone', 'data', 'horario', 'data_prometida', 'horario_prometido', 'retorno', 'chegada', 'status', 'funcionario_id', 'modelo_id', 'tipo_id',  'status_agenda_id'];
+    protected $fillable=['consultor', 'tipo', 'cliente', 'placa', 'modelo', 'dd', 'telefone', 'data', 'horario', 'data_prometida', 'horario_prometido', 'retorno', 'chegada', 'status' ];
 
-    public function funcionarios(){
+    // public function funcionarios(){
 
-    	return $this->hasOne('App\Funcionario', 'funcionario_id');
+    // 	return $this->hasOne('App\Funcionario', 'funcionario_id');
 
-    }
-    public function modelos(){
+    // }
+    // public function modelos(){
 
-    	return $this->hasOne('App\Modelo', 'modelo_id');
+    // 	return $this->hasOne('App\Modelo', 'modelo_id');
     	
-    }
-    public function tipos(){
+    // }
+    // public function tipos(){
 
-    	return $this->hasOne('App\Tipo', 'tipo_id');
+    // 	return $this->hasOne('App\Tipo', 'tipo_id');
     	
-    }   
-    public function status(){
+    // }   
+    // public function status(){
 
-    	return $this->hasOne('App\Statusagendamento', 'status_agenda_id');
+    // 	return $this->hasOne('App\Statusagendamento', 'status_agenda_id');
     	
-    } 
+    // } 'funcionario_id', 'modelo_id', 'tipo_id',  'status'
 
 }
