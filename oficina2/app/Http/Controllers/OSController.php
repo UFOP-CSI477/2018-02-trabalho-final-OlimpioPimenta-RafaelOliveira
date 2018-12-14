@@ -13,8 +13,8 @@ class OSController extends Controller
      */
     public function index()
     {
-        $modelo = Modelo::orderBy('nome')->get();
-        return view('os.index')->with('modelos',$modelo);
+        $os = OS::orderBy('os')->get();
+        return view('os.index')->with('oss',$os);
         
     }
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\OS;
-class OSsTableSeeder extends Seeder
+class OssTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,7 @@ class OSsTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('oss')->delete();
+        DB::table('Oss')->delete();
 
         OS::create(array(
             'numero_os'=>'1',

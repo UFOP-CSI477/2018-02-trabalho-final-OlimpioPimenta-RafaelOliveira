@@ -13,7 +13,7 @@ class CreateOssTable extends Migration
      */
     public function up()
     {
-        Schema::create('oss', function (Blueprint $table) {
+        Schema::create('orndemservicos', function (Blueprint $table) {
             $table->increments('id');
             $table->String('numero_os',100);
             $table->String('consultor',100);

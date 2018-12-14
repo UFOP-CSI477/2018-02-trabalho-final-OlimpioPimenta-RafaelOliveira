@@ -40,7 +40,7 @@
     </thead>
     <tbody>
 
-    @foreach($tipos as $w)
+    @foreach($oss as $w)
        <tr>
           <th scope="col"><a href="" target="_parent"><i class="material-icons">edit</i></a></th>
           <th scope="col"><a href="" target="_blank"><i class="material-icons">remove_circle</i></a></th>
