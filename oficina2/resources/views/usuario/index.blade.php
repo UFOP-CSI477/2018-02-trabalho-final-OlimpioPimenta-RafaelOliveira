@@ -88,7 +88,7 @@
   </tbody>
 </table>
 <div id="incluir" class="modal modal-fixed-footer">
-  <form method="post" action="{{ route('usuario.store')}}" class="col s12">
+  <form method="post" action="{{ route('usuario.store') }}" class="col s12">
     <div class="modal-content">
       @csrf
       <div class="modal-body">
