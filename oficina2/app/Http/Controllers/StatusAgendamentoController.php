@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Statusagendamento;
 
 class StatusAgendamentoController extends Controller
 {
@@ -13,7 +14,8 @@ class StatusAgendamentoController extends Controller
      */
     public function index()
     {
-        return view('statusagenda.index');
+        $statusagendamento = Statusagendamento::orderBy('codigo')->get();
+        return view('statusagenda.index')->with('statusagendamentos',$statusagendamento);
     }
 
     /**
@@ -34,7 +36,9 @@ class StatusAgendamentoController extends Controller
      */
     public function store(Request $request)
     {
-      
+       //
+       statusagendamento::create($request->all());
+       return redirect()->route('statusagenda.index');
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Tipo;
 
 class TipoController extends Controller
@@ -36,6 +37,11 @@ class TipoController extends Controller
     public function store(Request $request)
     {
         //
+        $request->merge(['apresenta_codigo'=>Input::has('apresenta_codigo')?true:false]);
+        $request->merge(['apresenta_legenda'=>Input::has('apresenta_legenda')?true:false]);
+        //dd($request);
+        Tipo::create($request->all());
+        return redirect()->route('tipos.index');
     }
 
     /**

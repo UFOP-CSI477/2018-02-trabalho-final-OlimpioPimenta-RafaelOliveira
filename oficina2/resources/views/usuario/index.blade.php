@@ -1,5 +1,3 @@
-
-
 @extends('layout')
 @section('title', 'Parallax - Usuário')
 @section('content')
@@ -87,6 +85,8 @@
     @endforeach
   </tbody>
 </table>
+
+
 <div id="incluir" class="modal modal-fixed-footer">
   <form method="post" action="{{ route('usuario.store') }}" class="col s12">
     <div class="modal-content">

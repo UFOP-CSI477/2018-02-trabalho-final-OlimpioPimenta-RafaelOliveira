@@ -38,8 +38,29 @@
           <th scope="col"><a href="#modal2" class="modal-trigger" data-id="{{$w->id}}" ><i class="material-icons">remove_circle</i></a></th>
           <td data-label="Especialidade">{{ $w->nome }}</td>
        </tr>
-     @endforeach
-   </tbody>
+      
+
+
+
+
+
+  <!-- Modal Structure Deletar -->
+ <div id="modal2" class="modal modal-fixed-footer">
+ <form method="post" action="{{route('modelo.destroy',$w->id)}}">
+ @csrf 
+ @method('DELETE')
+    <div class="modal-content">
+      <h4>Deseja realmente Excluir o elemento?</h4>
+    </div>
+    <input type="hidden" value="$w->id" name="$w->id"/>
+    <div class="modal-footer">
+    <a href="#" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
+    <button type="submit"  class="btn modal-trigger">Remover<i class="material-icons right">delete</i></button>
+    </div>
+  </form>  
+  </div>
+  @endforeach
+  </tbody>
  </table>
 
  <!-- Modal Structure Incluir-->
@@ -55,8 +76,8 @@
       @csrf
         <div clas="row">
             <div class="input-field col s12">
-              <input id="cod_equipe" type="text" class="validate" name="cod_equipe">
-              <label for="cod_equipe">Nome do Modelo</label>
+              <input id="nome" type="text" class="validate" name="nome">
+              <label for="nome">Nome do Modelo</label>
             </div>
         </div>
   </div>
@@ -67,20 +88,6 @@
     </form>
   </div>
 </div>
-
- <!-- Modal Structure Deletar -->
- <div id="modal2" class="modal modal-fixed-footer">
- <form method="post" action="{{route('modelo.destroy',$w->id)}}">
- @csrf 
- @method('DELETE')
-    <div class="modal-content">
-      <h4>Deseja realmente Excluir o elemento?</h4>
-    </div>
-    <input type="hidden" value="" name="{{$w->id}}"/>
-    <div class="modal-footer">
-    <a href="#" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
-    <button type="submit"  class="btn modal-trigger">Remover<i class="material-icons right">delete</i></button>
-    </div>
-  </form>  
-  </div>
  @endsection
+
+

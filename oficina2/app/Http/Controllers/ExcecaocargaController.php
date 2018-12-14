@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Excecaocarga;
+use Illuminate\Support\Facades\Input;
 
 class ExcecaocargaController extends Controller
 {
@@ -13,7 +15,8 @@ class ExcecaocargaController extends Controller
      */
     public function index()
     {
-        return view('excecaocarga.index');
+        $Excecaocarga = Excecaocarga::orderBy('chapa')->get();
+        return view('excecaocarga.index')->with('excecaocargas', $Excecaocarga);
     }
 
     /**
@@ -35,6 +38,11 @@ class ExcecaocargaController extends Controller
     public function store(Request $request)
     {
         //
+        
+        $request->merge(['produtivo'=>Input::has('produtivo')?true:false]);
+        $request->merge(['consultor'=>Input::has('consultor')?true:false]);
+        Excecaocarga::create($request->all());
+        return redirect()->route('excecaocarga.index');
     }
 
     /**
