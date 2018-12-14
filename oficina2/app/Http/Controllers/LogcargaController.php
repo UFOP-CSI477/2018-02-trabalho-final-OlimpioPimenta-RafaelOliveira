@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Logcarga;
 
 class LogcargaController extends Controller
 {
@@ -13,7 +14,9 @@ class LogcargaController extends Controller
      */
     public function index()
     {
-        return view('logcarga.index');
+
+        $logcarga = Logcarga::orderBy('tipo_registro')->get();
+        return view('logcarga.index')->with('logcargas',$logcarga);
     }
 
     /**
