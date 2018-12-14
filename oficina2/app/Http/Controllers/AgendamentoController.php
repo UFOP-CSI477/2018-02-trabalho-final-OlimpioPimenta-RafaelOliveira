@@ -22,7 +22,9 @@ class AgendamentoController extends Controller
 
     public function index()
     {
-        return view('agendamento.index');
+
+        $agendamento = Agendamento::orderBy('cliente')->get();
+        return view('agendamento.index')->with('agendamento', $agendamento);
     }
 
     /**
@@ -43,7 +45,8 @@ class AgendamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Agendamento::create($request->all());
+        return redirect('/agendamento');
     }
 
     /**
