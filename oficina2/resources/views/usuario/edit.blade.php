@@ -20,7 +20,7 @@
   @csrf
   @method('PATCH')
   <h4>Editar Usuário</h4>
-  </br>
+  <br/>
   <div class="row">
     <div class="input-field col s12">
       <input type="text" name="usuario" value="{{ $usuarios->usuario }}">

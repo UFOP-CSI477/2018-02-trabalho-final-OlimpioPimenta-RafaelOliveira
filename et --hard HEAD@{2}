@@ -1,0 +1,57 @@
+[33m43b3617[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: rebase: updating HEAD
+[33m43b3617[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: rebase: aborting
+[33m4af18a1[m HEAD@{2}: commit: atualização de stores 60%
+[33mc3b70af[m HEAD@{3}: rebase: zueira
+[33m979691a[m[33m ([m[1;31mupstream/master[m[33m)[m HEAD@{4}: rebase: checkout upstream/master
+[33m43b3617[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{5}: commit: atualizando
+[33m9a3f75d[m HEAD@{6}: rebase: updating HEAD
+[33m9a3f75d[m HEAD@{7}: rebase: aborting
+[33m4506812[m HEAD@{8}: rebase: zueira
+[33m979691a[m[33m ([m[1;31mupstream/master[m[33m)[m HEAD@{9}: rebase: checkout upstream/master
+[33m9a3f75d[m HEAD@{10}: rebase: updating HEAD
+[33m9a3f75d[m HEAD@{11}: rebase: aborting
+[33md60b423[m HEAD@{12}: rebase: zueira
+[33m979691a[m[33m ([m[1;31mupstream/master[m[33m)[m HEAD@{13}: rebase: checkout upstream/master
+[33m9a3f75d[m HEAD@{14}: rebase: updating HEAD
+[33m9a3f75d[m HEAD@{15}: rebase: aborting
+[33m1256a1a[m HEAD@{16}: commit: atulizando layout
+[33m7a232c4[m HEAD@{17}: rebase: zueira
+[33m979691a[m[33m ([m[1;31mupstream/master[m[33m)[m HEAD@{18}: rebase: checkout upstream/master
+[33m9a3f75d[m HEAD@{19}: commit: delete modal offline
+[33mdab265a[m HEAD@{20}: rebase: checkout master
+[33mdab265a[m HEAD@{21}: rebase finished: returning to refs/heads/master
+[33mdab265a[m HEAD@{22}: rebase: zueira
+[33me863fb0[m HEAD@{23}: rebase: checkout upstream/master
+[33m47b9c8e[m HEAD@{24}: commit: zueira
+[33m11201cd[m HEAD@{25}: commit (merge): atualização com crud equipamentos
+[33m4f8fa50[m HEAD@{26}: commit: crud completo das equipes
+[33m92e0ac6[m HEAD@{27}: rebase finished: returning to refs/heads/master
+[33m92e0ac6[m HEAD@{28}: rebase: atualização equipe 0.1
+[33m7a6f151[m HEAD@{29}: rebase: checkout upstream/master
+[33m5792c49[m HEAD@{30}: commit (merge): função editar funcionanddo com checkbox 100%
+[33m8703f9e[m HEAD@{31}: rebase finished: returning to refs/heads/master
+[33m8703f9e[m HEAD@{32}: rebase: atualização equipe 0.1
+[33m7a6f151[m HEAD@{33}: rebase: checkout upstream/master
+[33mdfc64d8[m HEAD@{34}: commit (merge): atualização equipe 0.1.1
+[33mfe885a7[m HEAD@{35}: rebase: checkout master
+[33mfe885a7[m HEAD@{36}: rebase: checkout master
+[33mfe885a7[m HEAD@{37}: rebase finished: returning to refs/heads/master
+[33mfe885a7[m HEAD@{38}: rebase: atualização equipe 0.1
+[33m7a6f151[m HEAD@{39}: rebase: checkout upstream/master
+[33mb1e70b9[m HEAD@{40}: commit: atualização equipe 0.1
+[33m6d633c9[m HEAD@{41}: commit: atualização do módulo Equipe
+[33mc1f8438[m HEAD@{42}: commit: atualização de caminho por url layout
+[33m0d4ca65[m HEAD@{43}: commit: adicionando modal ao incluir equipe
+[33m8d7158b[m HEAD@{44}: commit: Paginação nas rodas e lustrando lataria
+[33mbac8f19[m HEAD@{45}: commit: lanternagem para migrar novas classes e controlador de acelerador
+[33m43a762a[m HEAD@{46}: rebase: checkout master
+[33m43a762a[m HEAD@{47}: commit: calibrando pneus e rebomboca da parafuseta
+[33m8a57629[m HEAD@{48}: rebase finished: returning to refs/heads/master
+[33m8a57629[m HEAD@{49}: rebase: checkout upstream/master
+[33mf6b92b8[m HEAD@{50}: rebase finished: returning to refs/heads/master
+[33mf6b92b8[m HEAD@{51}: rebase: checkout upstream/master
+[33m50f46b6[m HEAD@{52}: commit: remoção comentario
+[33m6edfeeb[m HEAD@{53}: commit: limpand os modelos,equipes de faróis
+[33mcf5f927[m HEAD@{54}: commit: troca de borracha de freio
+[33m47f4b36[m HEAD@{55}: commit: atualização troca de óleo e revisão dos pneus logados
+[33m38308df[m HEAD@{56}: clone: from https://github.com/olimpiossdx/2018-02-trabalho-final-OlimpioPimenta-RafaelOliveira.git

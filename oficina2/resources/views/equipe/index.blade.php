@@ -16,7 +16,7 @@
       </div>
    </div>
 </div>
-<table class="striped highlight centered responsive-table">
+<table class="striped highlight centered responsive-table" id="tblData">
    <thead>
       <tr>
          <th scope="col"></th>
@@ -37,7 +37,7 @@
       @foreach($equipes as $w)
       <tr>
          <th scope="col"><a href="{{route('equipe.edit',$w->id)}}" target=""><i class="material-icons">edit</i></a></th>
-         <th scope="col"><a href="#modal2" class="modal-trigger" data-id="{{$w->id}}" ><i class="material-icons">remove_circle</i></a></th>
+         <th scope="col"><a href="#modal2" class="modal-trigger" class="btn"  value="{{$w->id}}" ><i class="material-icons">remove_circle</i></a></th>
          <td data-label="Código">{{ $w->cod_equipe }}</td>
          <td data-label="Descrição">{{ $w->descricao }}</td>
          <td data-label="Letra Prog">{{ $w->tipe_letra_prog}}
@@ -64,6 +64,26 @@
 
    
 </table>
+
+
+
+
+ <!-- Modal Structure Deletar -->
+ <div id="modal2" class="modal modal-fixed-footer">
+ <form method="post" action="{{route('equipe.destroy',$w->id)}}"  id="deletar" >
+ @csrf 
+ @method('DELETE')
+    <div class="modal-content">
+      <h4>Deseja realmente Excluir o elemento?  <span id="spnText"></span></h4>
+    </div>
+    <input type="hidden"  name="category_id" id="cat_id" value=""/>
+    <div class="modal-footer">
+    <a href="/equipe" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
+    <button type="submit" name="category_id" id="cat_id" class="btn modal-trigger">Remover<i class="material-icons right">delete</i></button>
+    </div>
+  </form>  
+  </div>
+
 
 <!-- Modal Structure Incluir-->
 <div id="modal1" class="modal modal-fixed-footer">
@@ -229,23 +249,6 @@
     </form>
   </div>
 </div>
-
-
- <!-- Modal Structure Deletar -->
- <div id="modal2" class="modal modal-fixed-footer">
- <form method="post" action="{{route('equipe.destroy',$w->id)}}">
- @csrf 
- @method('DELETE')
-    <div class="modal-content">
-      <h4>Deseja realmente Excluir o elemento?</h4>
-    </div>
-    <input type="hidden" value="" name="{{$w->id}}"/>
-    <div class="modal-footer">
-    <a href="/equipe" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
-    <button type="submit"  class="btn modal-trigger">Remover<i class="material-icons right">delete</i></button>
-    </div>
-  </form>  
-  </div>
 
 @endsection
 

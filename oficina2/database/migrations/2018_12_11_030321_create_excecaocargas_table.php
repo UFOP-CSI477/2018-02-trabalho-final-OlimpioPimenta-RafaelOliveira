@@ -13,8 +13,11 @@ class CreateExcecaocargasTable extends Migration
      */
     public function up()
     {
-        Schema::create('excecaocarga', function (Blueprint $table) {
+        Schema::create('excecaocargas', function (Blueprint $table) {
             $table->increments('id');
+            $table->String('chapa',20);
+            $table->boolean('produtivo');
+            $table->boolean('consultor');
             $table->timestamps();
         });
     }

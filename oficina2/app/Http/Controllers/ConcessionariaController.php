@@ -37,6 +37,8 @@ class ConcessionariaController extends Controller
     public function store(Request $request)
     {
         //
+        Concessionaria::create($request->all());
+        return redirect()->route('concessionarias.index');
     }
 
     /**
