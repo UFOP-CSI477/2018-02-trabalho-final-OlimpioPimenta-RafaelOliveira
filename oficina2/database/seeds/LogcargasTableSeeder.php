@@ -17,7 +17,7 @@ class LogcargasTableSeeder extends Seeder
         DB::table('logcargas')->delete();
 
         Logcarga::create(array(
-        'codigo_concessionaria'=>'4528-Veloster Center Belo Horizonte',
+        'codigo_concessionaria'=>'4528 Veloster Center BH',
         'tipo_registro'=>'OS',
         'acao'=>'1',
         'chapa'=>'Q12',
@@ -45,7 +45,7 @@ class LogcargasTableSeeder extends Seeder
         'erro_carga'=>'Consuktor (Q12) não encontrado'));
 
         Logcarga::create(array(
-            'codigo_concessionaria'=>'4528-Veloster Center Belo Horizonte',
+            'codigo_concessionaria'=>'4528 Veloster Center BH',
             'tipo_registro'=>'Apontamento',
             'acao'=>'1',
             'chapa'=>'AAM',
@@ -57,9 +57,9 @@ class LogcargasTableSeeder extends Seeder
             'data_abertura'=>'14/12/18',
             'data_prometida'=>'14/12/18',
             'hora_prometida'=>'17:00',
-            'codigo_cliente'=>'2',
+            'codigo_cliente'=>'5',
             'nome_cliente'=>'tamagotchi',
-            'ddd_residencial'=>'31',
+            'ddd_residencial'=>'',
             'fone_residencial'=>'',
             'ddd_celular'=>'',
             'fone_celular'=>'',
@@ -72,5 +72,33 @@ class LogcargasTableSeeder extends Seeder
             'processado'=>'1',
             'erro_carga'=>''));
     
+            Logcarga::create(array(
+                'codigo_concessionaria'=>'4528 Veloster Center BH',
+                'tipo_registro'=>'Agenda',
+                'acao'=>'1',
+                'chapa'=>'w25',
+                'numero_os'=>'',
+                'prisma'=>'',
+                'placa'=>'OKX87200',
+                'modelo'=>'',
+                'cor_veiculo'=>'',
+                'data_abertura'=>'14/12/18',
+                'data_prometida'=>'',
+                'hora_prometida'=>'14:30',
+                'codigo_cliente'=>'4',
+                'nome_cliente'=>'tamagotchi',
+                'ddd_residencial'=>'31',
+                'fone_residencial'=>'998741029',
+                'ddd_celular'=>'',
+                'fone_celular'=>'',
+                'ddd_comercial'=>'',
+                'fone_comerical'=>'',
+                'ramal_comerica'=>'',
+                'status'=>'1',
+                'data_carga'=>'2018-12-27 11:20:01',
+                'arquivo'=>'meuarquivocodigo4.txt',
+                'processado'=>'1',
+                'erro_carga'=>''));
+        
     }
 }
