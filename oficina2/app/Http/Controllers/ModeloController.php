@@ -90,6 +90,7 @@ class ModeloController extends Controller
     public function destroy(Modelo $modelo)
     {
         //
+        dd($modelo->all());
         $modelo->delete();
         return redirect()->route('modelo.index');
     }

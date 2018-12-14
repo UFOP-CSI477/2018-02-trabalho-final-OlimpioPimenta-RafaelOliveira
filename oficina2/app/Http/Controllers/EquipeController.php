@@ -94,9 +94,10 @@ class EquipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Equipe $equipe)
+    public function destroy($id)
     {
         //
+        dd($id);
         //dd($equipe->all());
         $equipe->delete();
         return redirect()->route('equipe.index');

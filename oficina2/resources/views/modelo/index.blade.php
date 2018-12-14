@@ -76,7 +76,7 @@
     <div class="modal-content">
       <h4>Deseja realmente Excluir o elemento?</h4>
     </div>
-    <input type="hidden" value="" name="{{$w->id}}"/>
+    <input type="hidden" value="{{$w->id}}" name="{{$w->id}}"/>
     <div class="modal-footer">
     <a href="#" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
     <button type="submit"  class="btn modal-trigger">Remover<i class="material-icons right">delete</i></button>

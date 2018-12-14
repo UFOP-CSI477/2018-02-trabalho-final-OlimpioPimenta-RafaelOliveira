@@ -103,7 +103,8 @@
     <!-- codigo para paginação das tablelas -->
   <script src="{{URL::asset('//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js')}}"></script>
   <script>
-
+        
+        
       $(document).ready(function(){
           $('#minhaTabela').DataTable({
               "language": {
@@ -131,9 +132,14 @@
         });
         // select usando materialize designer
         $('select').formSelect();
+        //$("#tblData tr:has(th)").click(function(e) { var clickedCell =  $(this).closest('tr').find('id').val(); $("#spnText").html( 'Clicked table cell value is: <b> ' + clickedCell.text() + '</b>'); console.log(clickedCell); });
+        // $("#modal2").click(function(e){
+        //   atert($(this).val());
+        // });
 
-      });
- 
+ });
+    
+     
   </script>
    </body>
  </html>
