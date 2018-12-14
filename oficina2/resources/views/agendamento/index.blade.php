@@ -26,7 +26,7 @@ bgcolor="#00A200" pouco urgente
 bgcolor="#072291" nao urgente -->
 
 
-<table class="highlight centered responsive-table">
+<table class="highlight centered responsive-table" id="minhaTabela">
    <thead>
       <tr>
          <th scope="col"></th>

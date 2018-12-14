@@ -24,7 +24,7 @@
 
 
 
-<table class="striped highlight centered responsive-table">
+<table class="striped highlight centered responsive-table" id="minhaTabela">
     <thead>
        <tr>
           <th scope="col"></th>

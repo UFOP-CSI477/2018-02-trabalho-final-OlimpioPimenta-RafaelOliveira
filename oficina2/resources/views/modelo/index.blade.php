@@ -22,7 +22,7 @@
 
 
 
-<table class="striped highlight responsive-table">
+<table class="striped highlight responsive-table" id="minhaTabela">
     <thead>
        <tr>
           <th scope="col"></th>
