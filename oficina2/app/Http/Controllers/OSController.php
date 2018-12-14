@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\OS;
 class OSController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class OSController extends Controller
      */
     public function index()
     {
-        return view('os.index');
+        $os = OS::orderBy('os')->get();
+        return view('os.index')->with('oss',$os);
+        
     }
 
     /**

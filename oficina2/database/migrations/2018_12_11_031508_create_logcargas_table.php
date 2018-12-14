@@ -15,11 +15,9 @@ class CreateLogcargasTable extends Migration
     {
         Schema::create('logcargas', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('codigo_concessionaria',30);
+            $table->String('codigo_concessionaria',191);
             $table->String('tipo_registro',30);
             $table->String('acao',30);
-            $table->String('os',30);
-            $table->String('data_carga',30);
             $table->String('chapa',30);
             $table->String('numero_os',30);
             $table->String('prisma',30);
@@ -28,10 +26,12 @@ class CreateLogcargasTable extends Migration
             $table->String('cor_veiculo',30);
             $table->String('data_abertura',30);
             $table->String('data_prometida',30);
+            $table->String('hora_prometida',30);
             $table->String('codigo_cliente',30);
+            $table->String('nome_cliente',30);
             $table->String('ddd_residencial',30);
             $table->String('fone_residencial',30);
-            $table->String('ddd_celular',30);
+            $table->String( 'ddd_celular',30);
             $table->String('fone_celular',30);
             $table->String('ddd_comercial',30);
             $table->String('fone_comerical',30);

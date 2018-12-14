@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Ordensdeservico;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 use App\OS;
-
-class OrdensdeservicosTableSeeder extends Seeder
+class OssTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +12,8 @@ class OrdensdeservicosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('orndemservicos')->delete();
+        //
+        DB::table('Oss')->delete();
 
         OS::create(array(
             'numero_os'=>'1',
@@ -133,8 +131,6 @@ class OrdensdeservicosTableSeeder extends Seeder
             'fone_comerical'=>'',
             'ramal_comerica'=>'',       
         ));
-
-        
 
     }
 }
