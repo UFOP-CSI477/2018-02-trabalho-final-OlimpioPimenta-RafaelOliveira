@@ -11,4 +11,10 @@ class Statusagendamento extends Model
         'codigo',
         'descricao'
     ];
+
+
+    public function Agendamentos(){
+
+    	return $this->belongsTo('App\Agendamento', 'id');
+    }
 }

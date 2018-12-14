@@ -16,7 +16,8 @@ class Tipo extends Model
     ];
 
     public function tipo(){
-        return $this->belongsTo('App\Agendamento');
+        
+        return $this->belongsTo('App\Agendamento', 'id');
     }
 
 }

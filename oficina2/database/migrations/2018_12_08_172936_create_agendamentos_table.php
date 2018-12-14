@@ -16,15 +16,15 @@ class CreateAgendamentosTable extends Migration
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->increments('id');
             $table->String('cliente',191);
-            $table->String('placa',191);
+            $table->String('placa',191);            
             $table->String('dd',5);
             $table->String('telefone',10);
             $table->date('data');
-            $table->time('horarrio');
+            $table->time('horario');
             $table->date('data_prometida');
-            $table->time('horarrio_prometido');
+            $table->time('horario_prometido');
             $table->boolean('retorno');
-            $table->String('chegada',50);
+            $table->String('chegada',50);            
             $table->timestamps();
             // chave para utilizar o seed
         });

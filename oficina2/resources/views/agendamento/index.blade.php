@@ -1,8 +1,8 @@
-
-
 @extends('layout')
-@section('title', 'Parallax - Usuário')
+@section('title', 'Parallax - Agendamento')
+
 @section('content')
+
 <div class="col s12 m5">
    <div class="card horizontal card-panel teal">
       <div class="card-image">
@@ -31,9 +31,13 @@ bgcolor="#072291" nao urgente -->
          <th scope="col"></th>
          <th scope="col"></th>
          <th scope="col">ID</th>
+         <th scope="col">CONSULTOR</th>
+         <th scope="col">TIPO</th>
+         <th scope="col">MODELO</th>
+         <th scope="col">STATUS</th>
          <th scope="col">CLIENTE</th>
          <th scope="col">PLACA</th>
-         <th scope="col">DD</th>
+         <th scope="col">DDD</th>
          <th scope="col">TELEFONE</th>
          <th scope="col">DATA</th>
          <th scope="col">HORÁRIO</th>
@@ -45,10 +49,10 @@ bgcolor="#072291" nao urgente -->
    </thead>
    <tbody>
       @foreach($agendamento as $w)
-      <tr bgcolor="">
-         <th class="col"><a href="{{ route('usuario.edit', $w->id) }}" class="waves-effect waves-light btn yellow">Editar</a></th>
+      <tr>
+         <th class="col"><a href="{{ route('agendamento.edit', $w->id) }}" class="waves-effect waves-light btn yellow">Editar</a></th>
          <th class="col">
-            <form method="post" action="{{ route('usuario.destroy', $w->id) }}" onsubmit="return confirm('Confirma exclusão do Usuário: {{ $w->usuario }} ?');" >
+            <form method="post" action="{{ route('agendamento.destroy', $w->id) }}" onsubmit="return confirm('Confirma exclusão do agendamento do Sr.(a): {{ $w->cliente }} ?');" >
                @csrf
                @method('DELETE')
                <input class="btn red" type="submit" value="Excluir">
@@ -56,6 +60,10 @@ bgcolor="#072291" nao urgente -->
          </th>
 
          <td data-label="id">{{ $w->id }}</td>
+         <td data-label="id">{{ $w->consultor }}</td>
+         <td data-label="id">{{ $w->tipo }}</td>
+         <td data-label="id">{{ $w->modelo }}</td>
+         <td data-label="id">{{ $w->status }}</td>
          <td data-label="cliente">{{ $w->cliente }}</td>
          <td data-label="placa">{{ $w->placa }}</td>
          <td data-label="dd">{{ $w->dd }}</td>
@@ -65,17 +73,16 @@ bgcolor="#072291" nao urgente -->
          <td data-label="data_comprometida">{{ $w->data_prometida }}</td>
          <td data-label="horario_comprometido">{{ $w->horario_prometido }}</td>
          <td data-label="retorno">{{ $w->retorno }}</td>
-         <td data-label="chegada">{{ $w->chegada }}</td>
          @if(($w->chegada) == 'Emergência')
-            bgcolor="#F10303"
+            <td bgcolor="#F10304" data-label="chegada">{{ $w->chegada }}</td>
          @elseif(($w->chegada) == 'Prioridade')
-            bgcolor="#FE6400"
+            <td bgcolor="#FE6400" data-label="chegada">{{ $w->chegada }}</td>
          @elseif(($w->chegada) == 'Urgência')
-            bgcolor="#FDCA00"
+            <td bgcolor="#FDCA00" data-label="chegada">{{ $w->chegada }}</td>
          @elseif(($w->chegada) == 'Pouco Urgente')
-            bgcolor="#00A200"
+            <td bgcolor="#00A200" data-label="chegada">{{ $w->chegada }}</td>
          @else
-            bgcolor="#072291"
+            <td bgcolor="#072291" data-label="chegada">{{ $w->chegada }}</td>
          @endif
       </tr>
       @endforeach
@@ -87,6 +94,31 @@ bgcolor="#072291" nao urgente -->
          @csrf
          <div class="modal-body">
             <h4>Novo Agendamento</h4>
+            <div class="row">
+               <div class="input-field col s12 m6">
+                  <select class="icons" name="consultor">
+                     @foreach
+                        <option value="{{ $funcionario->id }}">{{ $funcionario->nome }}</option>
+                     @endforeach
+                  </select>
+                  <label>Consultor</label>
+               </div>
+               <div class="input-field col s12 m6">
+                  <select class="icons" name="chegada">
+                     <option value="Emergência">Emergência</option>
+                     <option value="Prioridade">Prioridade</option>
+                     <option value="Urgência">Urgência</option>
+                     <option value="Pouco Urgente">Pouco Urgente</option>
+                     <option value="Não Urgente">Não Urgente</option>
+                  </select>
+                  <label>Chegada</label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12">
+                  <input type="text" name="cliente">
+                  <label>Cliente</label>
+               </div>
             <div class="row">
                <div class="input-field col s12">
                   <input type="text" name="cliente">
@@ -102,11 +134,11 @@ bgcolor="#072291" nao urgente -->
             <div class="row">
                <div class="input-field col s12 m6">
                   <input type="text" name="dd">
-                  <label>DD</label>
+                  <label>DDD</label>
                </div>
                <div class="input-field col s12 m6">
                   <input type="tel" name="telefone">
-                  <label>Telefone (xxxxx-xxxx)</label>
+                  <label>Telefone (xxxx-xxxx)</label>
                </div>
             </div>
             <div class="row">

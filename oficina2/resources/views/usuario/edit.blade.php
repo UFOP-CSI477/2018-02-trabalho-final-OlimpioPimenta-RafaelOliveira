@@ -1,8 +1,8 @@
-
-
 @extends('layout')
 @section('title', 'Parallax - Usuário')
+
 @section('content')
+
 <div class="col s12 m5">
   <div class="card horizontal card-panel teal">
     <div class="card-image">
@@ -15,6 +15,7 @@
     </div>
   </div>
 </div>
+
 <form method="post" action="{{ route('usuario.update', $usuarios->id)}}" class="col s12">
   @csrf
   @method('PATCH')
@@ -67,5 +68,6 @@
   </div>
 </form>
 </br>
+
 @endsection
 

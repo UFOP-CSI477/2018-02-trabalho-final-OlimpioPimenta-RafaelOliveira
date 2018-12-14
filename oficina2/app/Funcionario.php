@@ -28,4 +28,9 @@ class Funcionario extends Model
         'cafe_da_tarde_inicio',
         'cafe_da_tarde_fim',
     ];
+
+    public function agendamentos(){
+
+        return $this->belongsTo('App\Agendamento', 'id');
+    }
 }
