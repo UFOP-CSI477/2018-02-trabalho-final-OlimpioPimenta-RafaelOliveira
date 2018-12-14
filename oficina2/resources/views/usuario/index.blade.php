@@ -1,3 +1,5 @@
+
+
 @extends('layout')
 @section('title', 'Parallax - Usuário')
 @section('content')
@@ -32,19 +34,19 @@
     @foreach($usuarios as $w)
     <tr>
       @if (($w->administrador) == 1)
-        <th class="col"><a href="{{ route('usuario.edit', $w->id) }}" class="waves-effect waves-light btn yellow">Editar</a></th>
-        <th class="col">
+      <th class="col"><a href="{{ route('usuario.edit', $w->id) }}" class="waves-effect waves-light btn yellow">Editar</a></th>
+      <th class="col">
         <form method="post" action="{{ route('usuario.destroy', $w->id) }}" onsubmit="return confirm('Confirma exclusão do Usuário: {{ $w->usuario }} ?');" >
           @csrf
           @method('DELETE')
           <input class="btn red" type="submit" value="Excluir">
         </form>
-        </th>
+      </th>
       @else
-          <th class="col"><a class="waves-effect waves-light btn yellow">Editar</a></th>
-        <th scope="col">
-          <input class="btn red" type="submit" value="Excluir">
-        </th>
+      <th class="col"><a class="waves-effect waves-light btn yellow">Editar</a></th>
+      <th scope="col">
+        <input class="btn red" type="submit" value="Excluir">
+      </th>
       @endif
       <td data-label="ID">{{ $w->id }}</td>
       <td data-label="Usuário">{{ $w->usuario }}</td>
@@ -85,8 +87,6 @@
     @endforeach
   </tbody>
 </table>
-
-
 <div id="incluir" class="modal modal-fixed-footer">
   <form method="post" action="{{ route('usuario.store')}}" class="col s12">
     <div class="modal-content">
@@ -142,7 +142,5 @@
     </div>
   </form>
 </div>
-
-
 @endsection
 
