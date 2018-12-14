@@ -32,11 +32,19 @@
     @foreach($usuarios as $w)
     <tr>
       @if (($w->administrador) == 1)
-      <th scope="col"><a href="#edit" data-id="{{$w->id}}" class="modal-trigger"><i class="material-icons">edit</i></a></th>
-      <th scope="col"><a href="#delete" data-id="{{$w->id}}" class="modal-trigger"><i class="material-icons">remove_circle</i></a></th>
+        <th class="col"><a href="{{ route('usuario.edit', $w->id) }}" class="waves-effect waves-light btn yellow">Editar</a></th>
+        <th class="col">
+        <form method="post" action="{{ route('usuario.destroy', $w->id) }}" onsubmit="return confirm('Confirma exclusão do Usuário: {{ $w->usuario }} ?');" >
+          @csrf
+          @method('DELETE')
+          <input class="btn red" type="submit" value="Excluir">
+        </form>
+        </th>
       @else
-       <th scope="col"><a href="" data-id="{{$w->id}}" class="modal-trigger"><i class="material-icons">edit</i></a></th>
-      <th scope="col"><a href="" data-id="{{$w->id}}" class="modal-trigger"><i class="material-icons">remove_circle</i></a></th>
+          <th class="col"><a class="waves-effect waves-light btn yellow">Editar</a></th>
+        <th scope="col">
+          <input class="btn red" type="submit" value="Excluir">
+        </th>
       @endif
       <td data-label="ID">{{ $w->id }}</td>
       <td data-label="Usuário">{{ $w->usuario }}</td>
@@ -77,6 +85,8 @@
     @endforeach
   </tbody>
 </table>
+
+
 <div id="incluir" class="modal modal-fixed-footer">
   <form method="post" action="{{ route('usuario.store')}}" class="col s12">
     <div class="modal-content">
@@ -133,81 +143,6 @@
   </form>
 </div>
 
-<div id="delete" class="modal modal-fixed-footer">
-  <form method="post" action="{{ route('usuario.destroy', $w->id) }}" class="col s12">
-    <div class="modal-content">
-      @csrf
-      @method('DELETE')
-      <div class="modal-body">
-        <h4>Deletar Usuário</h4>
-        </br></br>
-        <h6 class="text-center">Você tem certeza que deseja excluir o usuário selecionado?</h6>
-        <input type="hidden" name="{{ $w->id }}" value="">      
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
-      <button class="btn waves-effect waves-light" type="submit">Remover<i class="material-icons right">delete</i>
-      </button>
-    </div>
-  </form>
-</div>
 
-<div id="edit" class="modal modal-fixed-footer">
-  <form method="post" action="{{ route('usuario.update', $w->id)}}" class="col s12">
-    <div class="modal-content">
-      @csrf
-      @method('PATCH')
-      <div class="modal-body">
-        <h4>Editar Usuário</h4>
-        <div class="row">
-          <div class="input-field col s12">
-            <input type="text" name="usuario" value="{{ $w->usuario }}">
-            <label>Usuário</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input type="text" name="chapa" value="{{ $w->chapa }}">
-            <label>Chapa</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input type="text" name="senha" value="{{ $w->senha }}">
-            <label>Senha</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input type="text" name="confirma" value="{{ $w->confirma }}">
-            <label>Confirma Senha</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <select class="icons" name="ativo">
-              <option value="1">Sim</option>
-              <option value="0">Não</option>
-            </select>
-            <label>Ativo</label>
-          </div>
-          <div class="input-field col s12 m6">
-            <select class="icons" name="administrador">
-              <option value="1" >Sim</option>
-              <option value="0" >Não</option>
-            </select>
-            <label>Administrador</label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
-      <button class="btn waves-effect waves-light" type="submit">Atualizar<i class="material-icons right">autorenew</i>
-      </button>
-    </div>
-  </form>
-</div>
 @endsection
 

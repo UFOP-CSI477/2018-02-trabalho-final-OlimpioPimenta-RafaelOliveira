@@ -97,6 +97,7 @@ class UsuarioController extends Controller
      */
     public function destroy(Usuario $usuario)
     {
+       
         $usuario->delete();
         session()->flash('mensagem', 'Usuário excluido sucesso!');
         return redirect()->route('usuario.index');

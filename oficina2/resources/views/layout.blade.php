@@ -129,10 +129,24 @@
           },
           complete: function() { alert('Closed'); } // Callback for Modal close
         });
+
         // select usando materialize designer
         $('select').formSelect();
 
+        $('delete').on('show.bs.modal', function(event){
+          var button = $(event.relatedTarget)
+          var user_id = button.data('iduser')
+          var modal = $(this)
+
+          modal.find('.modal-body #user_id').val(user_id);
+        });
+
+        
+
+
       });
+
+      
  
   </script>
    </body>
