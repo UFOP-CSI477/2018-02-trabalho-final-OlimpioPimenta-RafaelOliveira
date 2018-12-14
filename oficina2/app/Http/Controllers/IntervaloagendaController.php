@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Intervaloagenda;
 
 class IntervaloagendaController extends Controller
 {
@@ -13,7 +14,8 @@ class IntervaloagendaController extends Controller
      */
     public function index()
     {
-        return view('intervaloagenda.index');
+        $intervaloagenda = Intervaloagenda::orderBy('consultor')->get();
+        return view('intervaloagenda.index')->with('intervaloagendas', $intervaloagenda);
     }
 
     /**

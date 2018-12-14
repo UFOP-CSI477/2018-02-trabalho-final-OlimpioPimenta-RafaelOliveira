@@ -15,6 +15,11 @@ class CreateIntervaloagendasTable extends Migration
     {
         Schema::create('intervaloagendas', function (Blueprint $table) {
             $table->increments('id');
+            $table->String('consultor',20);
+            $table->String('chapa',20);
+            $table->String('hora_inicial',20);
+            $table->String('hora_final',20);
+            $table->String('tipo',20);
             $table->timestamps();
         });
     }

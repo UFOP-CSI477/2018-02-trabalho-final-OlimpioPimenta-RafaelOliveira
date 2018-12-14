@@ -97,7 +97,7 @@ class EquipeController extends Controller
     public function destroy(Equipe $equipe)
     {
         //
-        //dd($equipe->all());
+        dd($equipe->all());
         $equipe->delete();
         return redirect()->route('equipe.index');
     }

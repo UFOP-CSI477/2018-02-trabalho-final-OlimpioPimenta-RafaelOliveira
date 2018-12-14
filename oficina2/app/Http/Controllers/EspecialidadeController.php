@@ -37,6 +37,8 @@ class EspecialidadeController extends Controller
     public function store(Request $request)
     {
         //
+        Especialidade::create($request->all());
+        return redirect()->route('especialidades.index');
     }
 
     /**

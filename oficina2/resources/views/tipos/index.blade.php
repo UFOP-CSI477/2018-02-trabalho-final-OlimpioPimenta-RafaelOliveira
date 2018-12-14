@@ -1,7 +1,7 @@
 
 @extends('layout')
 
-@section('title', 'Parallax - Usuário')
+@section('title', 'Parallax - Tipos de Agendamento')
 
 @section('content')
 
@@ -13,6 +13,7 @@
     <div class="card-stacked">
       <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">Lista de tipo de Agendamento</span>
+         <button data-toogle="incluir" data-target="incluir" class="btn modal-trigger">Incluir</button>
       </div>
     </div>
   </div>
@@ -79,4 +80,51 @@
    </tbody>
  </table>
 
+
+ <div id="incluir" class="modal modal-fixed-footer">
+  <form method="post" action="{{ route('tipos.store')}}" class="col s12">
+    <div class="modal-content">
+      @csrf
+      <div class="modal-body">
+        <h4>Novo Tipo de Agendamento</h4>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" name="codigo">
+            <label>Codigo</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" name="descricao">
+            <label>Descrição</label>
+          </div>
+        </div>
+        
+        <div clas="row">
+            <div class="input-field col s12">
+            <label>
+                  <input id="produtivo" type="checkbox" value="1" name="apresenta_codigo"/>
+                    <span>Apresenta Código</span>
+                </label>
+            </div>
+        </div>
+        <br/>
+        <div clas="row">
+            <div class="input-field col s12">
+            <label>
+                  <input id="produtivo" type="checkbox" value="1" name="apresenta_legenda"/>
+                    <span>Apresenta Legenda</span>
+                </label>
+            </div>
+        </div>
+        <br/>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn red modal-close">Cancelar<i class="material-icons right">cancel</i></a>
+      <button class="btn waves-effect waves-light" type="submit">Adicionar<i class="material-icons right">add</i>
+      </button>
+    </div>
+  </form>
+</div>
  @endsection
